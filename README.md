@@ -8,7 +8,7 @@ $ mvn tomcat7:run
 ```
 
 ## Test
- - http://localhost:8080/secure-acceptance/
+ - [http://localhost:8080/secure-acceptance/](http://localhost:8080/secure-acceptance/)
 
 ### Test Card
  - http://www.sagepay.co.uk/support/12/36/test-card-details-for-your-test-transactions
