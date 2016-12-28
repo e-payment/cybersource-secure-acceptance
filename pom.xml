@@ -4,20 +4,23 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.e-payment</groupId>
+    <groupId>com.cybersource.sample</groupId>
     <artifactId>secure-acceptance</artifactId>
-    <version>0.1</version>
+    <name>CyberSource Secure Acceptance Test Web</name>
+    <version>1.0.0</version>
     <packaging>war</packaging>
 
     <properties>
-        <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <jetty.version>9.3.15.v20161220</jetty.version>
 	</properties>
 
     <build>
 
         <finalName>${project.artifactId}</finalName>
-		<plugins>
+
+        <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -32,21 +35,43 @@
                 </configuration>
             </plugin>
 
-            <!-- Tomcat: mvn tomcat7:run -->
+            <!-- mvn jetty:run -->
             <plugin>
-                <groupId>org.apache.tomcat.maven</groupId>
-                <artifactId>tomcat7-maven-plugin</artifactId>
-                <version>2.2</version>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>${jetty.version}</version>
                 <configuration>
-                    <path>/${project.artifactId}</path>
-                    <server>TomcatServer</server>
-                    <url>http://localhost:8080/manager/text</url>
-                    <port>8080</port>
-                    <update>true</update>
-                    <username>manager</username>
-                    <password>manager</password>
+                    <webApp>
+                        <contextPath>/cybs-sa</contextPath>
+                    </webApp>
                 </configuration>
             </plugin>
+
+            <!-- java -jar target\dependency\jetty-runner.jar target\*.war -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.10</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.eclipse.jetty</groupId>
+                                    <artifactId>jetty-runner</artifactId>
+                                    <version>${jetty.version}</version>
+                                    <destFileName>jetty-runner.jar</destFileName>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
     </build>
 

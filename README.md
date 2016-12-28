@@ -1,14 +1,21 @@
 CyberSource Secure Acceptance
-=================
+=============================
 
 ## Run
 
 ```term
-$ mvn tomcat7:run
+mvn clean jetty:run
+```
+
+## Package
+
+```term
+mvn clean package
+java -jar target\dependency\jetty-runner.jar target\*.war --path /cybs-sa
 ```
 
 ## Test
- - [http://localhost:8080/secure-acceptance/](http://localhost:8080/secure-acceptance/)
+ - [http://localhost:8080/cybs-sa](http://localhost:8080/cybs-sa)
 
 ### Test Card
  - http://www.sagepay.co.uk/support/12/36/test-card-details-for-your-test-transactions
@@ -17,7 +24,11 @@ $ mvn tomcat7:run
 - URL: https://ebctest.cybersource.com/ebctest/login/Login.do
 
 ### Merchant ID: kr950210047
- - User Name: itcybs
+#### Merchant
+ - Username: ekra01210047
+ - Password: Password852
+#### IT
+ - Username: itcybs
  - Password: Password105
 
 ### Merchant ID: 950212563

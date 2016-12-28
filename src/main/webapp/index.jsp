@@ -4,19 +4,23 @@
 <%@ page import="java.util.TimeZone" %>
 <%@ page import="java.util.UUID" %>
 <%@ page import="java.util.Locale" %>
-
 <%
 	request.setCharacterEncoding("UTF-8");
 	String contextPath = request.getContextPath();
+
+	String accessKey = "f854903616a93495b4dfccbd075bad8b";
+	String profileId = "291CDD47-6036-4C1E-BB97-B5CDA504B76F";
+
+	String cancelURL = "http://localhost:8080/cybs-cancel.jsp";
+	//String notifyURL = "http://www.krungsriepayment.net/EPayMerchantTestWeb/test/bgurl.jsp";
+	//String notifyURL = "https://www.google.co.th";
 %>
 
 <html>
 
 	<head>
 		<title>Secure Acceptance - Payment Form Example</title>
-		<link rel="stylesheet" type="text/css" href="<%=contextPath%>/css/payment.css"/>
-		<script type="text/javascript" src="<%=contextPath%>/js/jquery-1.7.min.js"></script>
-		<script type="text/javascript" src="<%=contextPath%>/js/payment_form.js"></script>
+		<link rel="stylesheet" href="<%=contextPath%>/css/payment.css"/>
 	</head>
 
 	<body>
@@ -33,19 +37,23 @@
 			<tr>
 				<td align="center">
 					<form id="payment_form" action="<%=contextPath%>/cybs-confirmation.jsp" method="POST">
-						<input type="hidden" name="access_key" value="f854903616a93495b4dfccbd075bad8b">
-						<input type="hidden" name="profile_id" value="291CDD47-6036-4C1E-BB97-B5CDA504B76F">
+						<input type="hidden" name="access_key" value="<%= accessKey %>">
+						<input type="hidden" name="profile_id" value="<%= profileId %>">
+						<input type="hidden" name="override_custom_cancel_page" value="<%= cancelURL %>">
+
+
 						<!--<input type="hidden" name="key_name" value="krungsri">-->
-						<input type="hidden" name="transaction_uuid" value="<%=UUID.randomUUID()%>">
+						<input type="hidden" name="transaction_uuid" value="<%= UUID.randomUUID() %>">
 						<input type="hidden" name="signed_field_names"
-							value="access_key,profile_id,transaction_uuid,signed_field_names,unsigned_field_names,signed_date_time,locale,transaction_type,reference_number,amount,currency">
-						<input type="hidden" name="unsigned_field_names" value="override_backoffice_post_url,override_custom_cancel_page,signature">
-						<input type="hidden" name="signed_date_time" value="<%=getUTCDateTime()%>">
-
-
+							   value="access_key,profile_id,transaction_uuid,signed_field_names,unsigned_field_names,signed_date_time,locale,transaction_type,reference_number,amount,currency">
+						<input type="hidden" name="unsigned_field_names" value="override_custom_cancel_page,signature,bill_to_address_line1,bill_to_address_city,bill_to_address_country,bill_to_forename,bill_to_surname,bill_to_email">
+						<input type="hidden" name="signed_date_time" value="<%= getUTCDateTime() %>">
 						<input type="hidden" name="locale" value="en-US">
-						<input type="hidden" name="override_backoffice_post_url" value="http://www.google.com">
-						<input type="hidden" name="override_custom_cancel_page" value="http://www.google.com">
+
+						<input type="hidden" name="bill_to_address_line1" value="bill_to_address_line1">
+						<input type="hidden" name="bill_to_address_city" value="CITY">
+						<input type="hidden" name="bill_to_address_country" value="TH">
+						<input type="hidden" name="bill_to_email" value="x@y.com">
 
 						<table>
 							<tr>
@@ -93,12 +101,14 @@
 
 									</fieldset>
 
-									<br/>
-
-									<input type="submit" id="submit" name="submit" value="Submit"/>&nbsp;&nbsp;&nbsp;
 								</td>
 								<td>
 									<img alt="" src="<%=contextPath%>/images/galaxy note II.jpg"/>
+								</td>
+							</tr>
+							<tr>
+								<td valign="top" align="center">
+									<input type="submit" id="submit" value="Submit"/>
 								</td>
 							</tr>
 						</table>
@@ -112,6 +122,9 @@
 
 			</tr>
 		</table>
+
+		<script src="<%=contextPath%>/js/jquery-1.7.min.js"></script>
+		<script src="<%=contextPath%>/js/payment_form.js"></script>
 
 	</body>
 </html>
