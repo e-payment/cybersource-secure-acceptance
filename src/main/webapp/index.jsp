@@ -11,7 +11,7 @@
 	String accessKey = "f854903616a93495b4dfccbd075bad8b";
 	String profileId = "291CDD47-6036-4C1E-BB97-B5CDA504B76F";
 
-	String cancelURL = "http://localhost:8080/cybs-cancel.jsp";
+	String cancelURL = "http://localhost:8080/cybs-sa/cybs-cancel.jsp";
 	//String notifyURL = "http://www.krungsriepayment.net/EPayMerchantTestWeb/test/bgurl.jsp";
 	//String notifyURL = "https://www.google.co.th";
 %>
@@ -20,7 +20,7 @@
 
 	<head>
 		<title>Secure Acceptance - Payment Form Example</title>
-		<link rel="stylesheet" href="<%=contextPath%>/css/payment.css"/>
+		<link rel="stylesheet" type="text/css" href="<%=contextPath%>/css/payment.css"/>
 	</head>
 
 	<body>
@@ -36,7 +36,7 @@
 			<!-- body -->
 			<tr>
 				<td align="center">
-					<form id="payment_form" action="<%=contextPath%>/cybs-confirmation.jsp" method="POST">
+					<form id="payment_form" action="<%=contextPath%>/cybs-confirm.jsp" method="POST">
 						<input type="hidden" name="access_key" value="<%= accessKey %>">
 						<input type="hidden" name="profile_id" value="<%= profileId %>">
 						<input type="hidden" name="override_custom_cancel_page" value="<%= cancelURL %>">
@@ -64,7 +64,7 @@
 
 										<table>
 											<tr>
-												<td>transaction_type:</td>
+												<td>Transaction Type:</td>
 												<td>
 													<select id="transaction_type" name="transaction_type">
 														<option value="sale" selected="true">Sale</option>
@@ -73,12 +73,8 @@
 												</td>
 											</tr>
 											<tr>
-												<td>reference_number:</td>
-												<td><input type="text" name="reference_number" size="20" value='REF-001'></td>
-											</tr>
-											<tr>
-												<td>amount:</td>
-												<td><input type="text" name="amount" size="20" value='350'></td>
+												<td>Ref No:</td>
+												<td><input type="text" name="reference_number" size="20" value='REF-000001'></td>
 											</tr>
 											<tr>
 												<td>Name:</td>
@@ -88,8 +84,12 @@
 												<td>LastName:</td>
 												<td><input type="text" name="bill_to_surname" size="20" value='Lastname'></td>
 											</tr>
+																						<tr>
+												<td>Amount:</td>
+												<td><input type="text" name="amount" size="20" value='99.99'></td>
+											</tr>
 											<tr>
-												<td>currency:</td>
+												<td>Currency:</td>
 												<td>
 													<select id="currency" name="currency">
 														<option value="THB" selected="true">THB - Thai Baht</option>
@@ -103,7 +103,7 @@
 
 								</td>
 								<td>
-									<img alt="" src="<%=contextPath%>/images/galaxy note II.jpg"/>
+									<img alt="" src="<%=contextPath%>/images/item001.jpg"/>
 								</td>
 							</tr>
 							<tr>

@@ -10,8 +10,8 @@
 
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="<%=contextPath%>/css/payment.css"/>
 		<title>Secure Acceptance - Payment Form Example</title>
+		<link rel="stylesheet" type="text/css" href="<%=contextPath%>/css/payment.css"/>
 	</head>
 
 	<body>
@@ -70,24 +70,14 @@
 													String keyStr = (String) param.getKey();
 													String valStr = (String) param.getValue();
 
-													/*if ("reference_number".equals(keyStr) || "amount".equals(keyStr))
-													{*/%>
-
-
-														<!--<div>
-
-															<span class="fieldName"></%/=param.getKey()%>:</span>
-															<span class="fieldValue"></%/=param.getValue()%></span>
-
-														</div>-->
-
+													%>
 
 														<tr>
-															<td><%=keyStr%>:</td>
-															<td><%=valStr%></td>
+															<td><%= keyStr %>:</td>
+															<td><%= valStr %></td>
 														</tr>
 
-													<%//}
+													<%
 												}
 											%>
 										</table>
