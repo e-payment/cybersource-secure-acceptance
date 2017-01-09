@@ -42,7 +42,7 @@
                 <version>${jetty.version}</version>
                 <configuration>
                     <webApp>
-                        <contextPath>/cybs-sa</contextPath>
+                        <contextPath>/sa</contextPath>
                     </webApp>
                 </configuration>
             </plugin>
