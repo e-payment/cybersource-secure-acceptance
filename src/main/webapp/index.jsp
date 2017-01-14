@@ -11,7 +11,7 @@
 	String accessKey = "f854903616a93495b4dfccbd075bad8b";
 	String profileId = "291CDD47-6036-4C1E-BB97-B5CDA504B76F";
 
-	String cancelURL = "http://localhost:8080/cybs-sa/cybs-cancel.jsp";
+	String cancelURL = "http://localhost:8080/sa/cybs-cancel.jsp";
 	//String notifyURL = "http://www.krungsriepayment.net/EPayMerchantTestWeb/test/bgurl.jsp";
 	//String notifyURL = "https://www.google.co.th";
 %>

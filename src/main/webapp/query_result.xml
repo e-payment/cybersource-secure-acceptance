@@ -1,0 +1,114 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Report SYSTEM "https://ebctest.cybersource.com/ebctest/reports/dtd/tdr_1_9.dtd">
+
+<Report xmlns="https://ebctest.cybersource.com/ebctest/reports/dtd/tdr_1_9.dtd" Name="Transaction Detail" Version="1.9" MerchantID="kr950210047" ReportStartDate="2017-01-14 04:15:14.281+07:00" ReportEndDate="2017-01-14 04:15:14.281+07:00">
+  <Requests>
+    <Request MerchantReferenceNumber="REF-000001" RequestDate="2017-01-14T11:12:20+07:00" RequestID="4843671405266743804103" SubscriptionID="" Source="Secure Acceptance Web/Mobile" TransactionReferenceNumber="4843671405266743804103">
+      <BillTo>
+        <FirstName>NAME</FirstName>
+        <LastName>LASTNAME</LastName>
+        <Address1>bill_to_address_line1</Address1>
+        <City>CITY</City>
+        <State>N/A</State>
+        <Zip>N/A</Zip>
+        <Email>x@y.com</Email>
+        <Country>TH</Country>
+        <Phone />
+      </BillTo>
+      <PaymentMethod>
+        <Card>
+          <AccountSuffix>1112</AccountSuffix>
+          <ExpirationMonth>01</ExpirationMonth>
+          <ExpirationYear>2018</ExpirationYear>
+          <CardType>Visa</CardType>
+        </Card>
+      </PaymentMethod>
+      <LineItems>
+        <LineItem Number="0">
+          <FulfillmentType />
+          <Quantity>1</Quantity>
+          <UnitPrice>99.99</UnitPrice>
+          <TaxAmount>0.00</TaxAmount>
+          <ProductCode>default</ProductCode>
+        </LineItem>
+      </LineItems>
+      <ApplicationReplies>
+        <ApplicationReply Name="ics_auth">
+          <RCode>1</RCode>
+          <RFlag>SOK</RFlag>
+          <RMsg>Request was processed successfully.</RMsg>
+        </ApplicationReply>
+        <ApplicationReply Name="ics_bill">
+          <RCode>1</RCode>
+          <RFlag>SOK</RFlag>
+          <RMsg>Request was processed successfully.</RMsg>
+        </ApplicationReply>
+        <ApplicationReply Name="ics_decision">
+          <RCode>1</RCode>
+          <RFlag>SOK</RFlag>
+          <RMsg>Service processed successfully</RMsg>
+        </ApplicationReply>
+        <ApplicationReply Name="ics_decision_early">
+          <RCode>1</RCode>
+          <RFlag />
+        </ApplicationReply>
+        <ApplicationReply Name="ics_pa_validate">
+          <RCode>1</RCode>
+          <RFlag>SOK</RFlag>
+          <RMsg>ics_pa_validate service was successful</RMsg>
+        </ApplicationReply>
+        <ApplicationReply Name="ics_score">
+          <RCode>1</RCode>
+          <RFlag>DSCORE</RFlag>
+          <RMsg>Score exceeds threshold. Score = 99</RMsg>
+        </ApplicationReply>
+      </ApplicationReplies>
+      <PaymentData>
+        <PaymentRequestID>4843671405266743804103</PaymentRequestID>
+        <PaymentProcessor>vdcbay</PaymentProcessor>
+        <Amount>99.99</Amount>
+        <CurrencyCode>THB</CurrencyCode>
+        <TotalTaxAmount>0.00</TotalTaxAmount>
+        <AuthorizationCode>831000</AuthorizationCode>
+        <AVSResult>Y</AVSResult>
+        <AVSResultMapped>Y</AVSResultMapped>
+        <CVResult>M</CVResult>
+        <EventType>PENDING</EventType>
+        <PayerAuthenticationInfo>
+          <ECI>5</ECI>
+          <AAV_CAVV>AAABAWFlmQAAAABjRWWZEEFgFz+=</AAV_CAVV>
+          <XID>dTc0Szk5bFV0MjNWR2RadHRUYzA=</XID>
+        </PayerAuthenticationInfo>
+        <RequestedAmount>99.99</RequestedAmount>
+        <RequestedAmountCurrencyCode>THB</RequestedAmountCurrencyCode>
+      </PaymentData>
+      <RiskData>
+        <Factors>H</Factors>
+        <HostSeverity>1</HostSeverity>
+        <Score>99</Score>
+        <TimeLocal>2017-01-14T18:12:20</TimeLocal>
+        <AppliedThreshold>50</AppliedThreshold>
+        <AppliedTimeHedge>normal</AppliedTimeHedge>
+        <AppliedVelocityHedge>normal</AppliedVelocityHedge>
+        <AppliedHostHedge>normal</AppliedHostHedge>
+        <AppliedCategoryGift>n</AppliedCategoryGift>
+        <AppliedCategoryTime />
+        <AppliedAVS>Y</AppliedAVS>
+        <AppliedCV>M</AppliedCV>
+      </RiskData>
+      <ProfileList>
+        <Profile Name="Merchant TEST">
+          <ProfileMode>Active</ProfileMode>
+          <ProfileDecision>ACCEPT</ProfileDecision>
+          <RuleList>
+            <Rule>
+              <RuleName>BIN &lt;&gt; TH = Reject</RuleName>
+              <RuleDecision>Ignore</RuleDecision>
+            </Rule>
+          </RuleList>
+        </Profile>
+      </ProfileList>
+    </Request>
+  </Requests>
+</Report>
