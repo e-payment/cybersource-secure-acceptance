@@ -23,31 +23,17 @@ java -jar target\dependency\jetty-runner.jar target\*.war --path /cybs-sa
 ## Merchant Login
 - URL: https://ebctest.cybersource.com/ebctest/login/Login.do
 
-### Merchant ID: kr950210047
-
-#### Merchant
- - Username: ekra01210047
- - Password: Password852
-
-#### IT
- - Username: itcybs
- - Password: Password106
-
 ### Merchant ID: 950212563
-CyberSource Merchant ID: 950212563_acct
+
+#### Admin
+ - CyberSource Merchant ID: 950212563_acct
+ - Username: admin
+ - Password: Pa******02
 
 #### Merchant
- - Username: admin
- - Password: Passw0rd563
-
-#### IT
- - Username: itcybs
- - Password: Password106
-
+ - CyberSource Merchant ID: 950212563
  - Username: merchant
- - Password: Passw0rd2513
- - Password: Passw0rd2563
-
+ - Password: Pa******02
 
 #### Menu
 - Transaction Search > General Search
@@ -57,5 +43,5 @@ CyberSource Merchant ID: 950212563_acct
 
 ### Inquiry
  - [http://localhost:8080/sa/query.jsp](http://localhost:8080/sa/query.jsp)
- - Username: itquery
- - Password: Password123
+ - Username: ?
+ - Password: ?
