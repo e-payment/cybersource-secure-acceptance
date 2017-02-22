@@ -11,7 +11,7 @@
 	String accessKey = "f854903616a93495b4dfccbd075bad8b";
 	String profileId = "291CDD47-6036-4C1E-BB97-B5CDA504B76F";
 
-	String cancelURL = "http://localhost:8080/sa/cybs-cancel.jsp";
+	String cancelURL = "http://127.0.0.1:8080/sa/cybs-cancel.jsp";
 	//String notifyURL = "http://www.krungsriepayment.net/EPayMerchantTestWeb/test/bgurl.jsp";
 	//String notifyURL = "https://www.google.co.th";
 %>
@@ -40,7 +40,6 @@
 						<input type="hidden" name="access_key" value="<%= accessKey %>">
 						<input type="hidden" name="profile_id" value="<%= profileId %>">
 						<input type="hidden" name="override_custom_cancel_page" value="<%= cancelURL %>">
-
 
 						<!--<input type="hidden" name="key_name" value="krungsri">-->
 						<input type="hidden" name="transaction_uuid" value="<%= UUID.randomUUID() %>">
