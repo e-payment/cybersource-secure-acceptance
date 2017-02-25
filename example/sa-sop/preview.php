@@ -3,13 +3,20 @@
 include_once('config.php');
 include_once('security.php');
 
+define('DF_ORG_ID', '1snn5n9w');
+session_start();
+
+$df_param = 'org_id=' . DF_ORG_ID . '&amp;session_ id=' . MERCHANT_ID . session_id();
+
 ?>
 <html>
 <head>
     <title>Unsigned Data Fields</title>
-    <link rel="stylesheet" type="text/css" href="payment.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/payment.css"/>
 </head>
 <body>
+<img src="/img/logo-cybersource.png" style="padding-bottom: 20px;" />
+
 <form id="payment_confirmation" action="<?php echo PAYMENT_URL; ?>" method="post"/>
 <?php
 
@@ -49,10 +56,24 @@ include_once('security.php');
     </fieldset>
 
     <input type="submit" id="submit" value="Confirm "/>
+
 </form>
 
-<script type="text/javascript" src="jquery-1.7.min.js"></script>
-<script type="text/javascript" src="payment_form.js"></script>
+<script type="text/javascript" src="/js/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="/js/payment_form.js"></script>
+
+<!-- DF START -->
+<p style="background:url(https://h.online-metrix.net/fp/clear.png?<?php echo $df_param ?>&amp;m=1)"></p>
+<img src="https://h.online-metrix.net/fp/clear.png?org_id=<?php echo $df_param ?>&amp;m=2" width="0" height="0" alt="" />
+
+<object type="application/x-shockwave-flash"
+        data="https://h.online- metrix.net/fp/fp.swf?org_id=<?php echo $df_param ?>" width="0" height="0" id="thm_fp">
+<param name="movie" value="https://h.online-metrix.net/fp/fp.swf?org_ id=<?php echo $df_param ?>" />
+</object>
+
+<script type="text/javascript" src="https://h.online-metrix.net/fp/check.js?<?php echo $df_param ?>"></script>
+
+<!-- DF END-->
 
 </body>
 </html>
