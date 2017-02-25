@@ -1,13 +1,17 @@
-<?php include_once('config.php'); ?>
+<?php
+
+include_once('config.php'); 
+
+?>
 
 <html>
 <head>
-    <title>Signed Data Fields</title>
+    <title>Payment Form</title>
     <link rel="stylesheet" type="text/css" href="/css/payment.css"/>
 </head>
 <body>
 <img src="/img/logo-cybersource.png" style="padding-bottom: 20px;" />
-<form id="payment_form" action="preview.php" method="post">
+<form id="payment_form" action="payment_confirm.php" method="post">
     <input type="hidden" name="profile_id" value="<?php echo PROFILE_ID ?>">
     <input type="hidden" name="access_key" value="<?php echo ACCESS_KEY ?>">
     <input type="hidden" name="transaction_uuid" value="<?php echo uniqid() ?>">
@@ -19,10 +23,10 @@
         <legend>Signed Data Fields</legend>
 These fields will be POSTed to your server for signing using the Security file included in the <br> sample script.  The name of each signed field should be included in the signed_field_names.<BR></BR>
         <div id="paymentDetailsSection" class="section">
-            <span>transaction_type:</span><input type="text" name="transaction_type" size="25"><br/>
-            <span>reference_number:</span><input type="text" name="reference_number" size="25"><br/>
-            <span>amount:</span><input type="text" name="amount" size="25"><br/>
-            <span>currency:</span><input type="text" name="currency" size="25"><br/>
+            <span>transaction_type:</span><input type="text" name="transaction_type"><br/>
+            <span>reference_number:</span><input type="text" name="reference_number"><br/>
+            <span>amount:</span><input type="text" name="amount"><br/>
+            <span>currency:</span><input type="text" name="currency" max="3"><br/>
             <span>payment_method:</span><input type="text" name="payment_method"><br/>
             <span>bill_to_forename:</span><input type="text" name="bill_to_forename"><br/>
             <span>bill_to_surname:</span><input type="text" name="bill_to_surname"><br/>
@@ -35,7 +39,7 @@ These fields will be POSTed to your server for signing using the Security file i
             <span>bill_to_address_postal_code:</span><input type="text" name="bill_to_address_postal_code"><br/>
         </div>
     </fieldset>
-    <input type="submit" id="submit" name="submit" value="Submit"/>
+    <input type="submit" id="submit" value="Submit"/>
 </form>
 
 <script type="text/javascript" src="/js/jquery-1.7.min.js"></script>

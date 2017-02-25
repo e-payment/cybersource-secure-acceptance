@@ -1,6 +1,15 @@
+body {
+    padding: 10px 10px;
+    font-family: Tahoma;
+}
+
 a {
     font-size: 1.0em;
     text-decoration: none;
+}
+
+input[type=text] {
+    width: 200px;
 }
 
 input[type=submit] {
@@ -9,12 +18,12 @@ input[type=submit] {
 
 span {
     font-weight: bold;
-    width: 350px;
+    width: 300px;
     display: inline-block;
 }
 
 .fieldName {
-    width: 400px;
+    width: 300px;
     font-weight: bold;
     vertical-align: top;
 }
