@@ -2,7 +2,7 @@
 
 include_once('config.php');
 
-function sign ($params) {
+function sign($params) {
 	return signData(buildDataToSign($params), SECRET_KEY);
 }
 

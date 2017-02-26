@@ -8,7 +8,7 @@
 <body>
 <img src="/img/logo-cybersource.png" style="padding-bottom: 20px;" />
 <br>
-<a href="/sa-sop/payment.php">&lt;&lt; back</a>
+<a href="./payment_form.php">&lt;&lt; back</a>
 
 <pre>
 <?php

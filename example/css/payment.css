@@ -1,6 +1,21 @@
 body {
     padding: 10px 10px;
-    font-family: Tahoma;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+}
+
+h1, h2, h3, h4 {
+    color: #0171aa;
+    font-weight: normal;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0; 
 }
 
 a {
@@ -17,19 +32,29 @@ input[type=submit] {
 }
 
 span {
-    font-weight: bold;
     width: 300px;
     display: inline-block;
 }
 
+#debug {
+    display: block;
+    min-width: 768px;
+    overflow: auto;
+}
+
 .fieldName {
     width: 300px;
-    font-weight: bold;
     vertical-align: top;
 }
 
 .fieldValue {
     width: 400px;
-    font-weight: normal;
+    font-family: "Courier New";
+    font-size: 9pt;
     vertical-align: top;
+}
+
+pre {
+    font-family: "Courier New";
+    font-size: 9pt;
 }
