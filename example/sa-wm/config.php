@@ -1,18 +1,19 @@
 <?php
 
-define('MERCHANT_ID', '950212563');
+define('MERCHANT_ID', 'kr950210047');
 
 // DF TEST: 1snn5n9w, LIVE: k8vif92e 
 define('DF_ORG_ID', '1snn5n9w');
 
-// CYBS-SA-WM : 10549F0F-A5C9-48BC-99E6-1FC332C254E6
-define('PROFILE_ID', 'CYBS-SA-WM');
-define('ACCESS_KEY', '7936bbb5e9bf361bb2c414a5bf67c45a');
-define('SECRET_KEY', '0730309eea5947cc8fec6e720dd8af4794b590ce60d04454b7197069946dd1f976c4fc3295c94ad18822adfe5d76f0bda633e77424964a0c99f0e28316809bbb801e19ee3bdc4fb881d60b0962783fda8c15b8cd9d054c5d87c71be0fca55b1b3e2e08a296c941ce8567ddd93fb7da79d6a1f08e15b64050a7bee22a05ab51f1');
+// SAHOP2 : 291CDD47-6036-4C1E-BB97-B5CDA504B76F
+define('PROFILE_ID', '291CDD47-6036-4C1E-BB97-B5CDA504B76F');
+define('ACCESS_KEY', 'f854903616a93495b4dfccbd075bad8b');
+define('SECRET_KEY', '9a5d4d3a6f9845bf96372912813ff4582e71cf2482c14924b6a8a56b146d79bb5ec5b1b6ea5449229eaefaea522d1e25edd359e9c16946b691c504850cb5e9cb188383e627594e19b925de7a36ab06dcc23511ddc0754c86836feedf500332452f8bc1f455d44af5aae4dcbfe2cbec14b4b8644878ea40fab7f761cd6c9c96b1');
 define('HMAC_SHA256', 'sha256');
 
 // PAYMENT URL
-//define('PAYMENT_URL', 'https://testsecureacceptance.cybersource.com/silent/pay');
-define('PAYMENT_URL', '/sa-wm/payment_debug.php');
+define('PAYMENT_URL', 'https://testsecureacceptance.cybersource.com/pay');
+// define('PAYMENT_URL', '/sa-wm/payment_debug.php');
+
 
 // EOF

@@ -6,10 +6,10 @@
     <link rel="stylesheet" type="text/css" href="/css/payment.css"/>
 </head>
 <body>
-<img src="/img/logo-cybersource.png" style="padding-bottom: 20px;" />
-<br>
-<a href="./payment_form.php">&lt;&lt; back</a>
+<img src="/img/logo-cybersource.png" style="padding-bottom: 10px;" />
+<h2>Receipt</h2>
 
+<hr/>
 <div id="container">
 <pre>
 <?php
@@ -33,6 +33,9 @@ echo PHP_EOL . PHP_EOL . "Signed: " . $signed;
 
 </pre>
 </div>
+
+<hr/>
+<p><a href="./payment_form.php">&lt;&lt; BACK</a></p>
 
 </body>
 </html>

@@ -27,7 +27,7 @@
 
 		}
 
-		out.print("<tr><td>VerifyTransactionSignature()</td><td>" + verifyTransactionSignature(map) + "</td></tr>");
+		out.print("<tr><td>Signed</td><td>" + verifyTransactionSignature(map) + "</td></tr>");
 
 	} catch (Exception e) {
 

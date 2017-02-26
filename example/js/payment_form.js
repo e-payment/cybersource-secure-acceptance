@@ -50,7 +50,7 @@ function capitalize(string) {
 function setDefaultsForPaymentDetailsSection() {
     $("input[name='transaction_type']").val("sale");
     $("input[name='reference_number']").val(new Date().getTime());
-    $("input[name='amount']").val("15.72");
+    $("input[name='amount']").val("1572.00");
     $("input[name='currency']").val("THB");
     $("input[name='payment_method']").val("card");
     $("input[name='bill_to_forename']").val("Krungsri");
