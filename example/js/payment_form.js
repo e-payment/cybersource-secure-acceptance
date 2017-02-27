@@ -50,7 +50,7 @@ function capitalize(string) {
 function setDefaultsForPaymentDetailsSection() {
     $("input[name='transaction_type']").val("sale");
     $("input[name='reference_number']").val(new Date().getTime());
-    $("input[name='amount']").val("1572.00");
+    $("input[name='amount']").val("2572.00");
     $("input[name='currency']").val("THB");
     $("input[name='payment_method']").val("card");
     $("input[name='bill_to_forename']").val("Krungsri");
@@ -67,7 +67,7 @@ function setDefaultsForPaymentDetailsSection() {
 
 function setDefaultsForUnsignedDetailsSection(){
     $("input[name='card_type']").val("001");
-    $("input[name='card_number']").val("4111111111111111");
+    $("input[name='card_number']").val("4012001037141112");
     $("input[name='card_expiry_date']").val("07-2022");
 }
 
