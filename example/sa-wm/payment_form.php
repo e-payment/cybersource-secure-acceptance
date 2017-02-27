@@ -4,14 +4,14 @@ include_once('config.php');
 
 ob_start();
 
+// Start a new session
+session_start();
+
 // Remove the $_SESSION variable
 session_unset();
 
 // Remove the server-side session
 session_destroy();
-
-// Start a new session
-session_start();
 
 // Generate a new session ID
 session_regenerate_id(true);
