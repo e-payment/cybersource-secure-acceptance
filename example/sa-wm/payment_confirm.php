@@ -44,7 +44,7 @@ $df_param = 'org_id=' . DF_ORG_ID . '&amp;session_id=' . MERCHANT_ID . session_i
 
     <input type="hidden" name="device_fingerprint_param" value="<?php echo $df_param ?>" />
     <input type="hidden" name="signature" value="<?php echo sign($params) ?>" />
-    <input type="submit" id="submit" value="Confirm"/>
+    <input type="submit" id="btn_submit" value="Confirm"/>
 
 <!-- DF START -->
 <p style="background:url(https://h.online-metrix.net/fp/clear.png?<?php echo $df_param ?>&amp;m=1)"></p>

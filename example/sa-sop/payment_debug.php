@@ -5,24 +5,26 @@
 </head>
 <body>
 <img src="/img/logo-cybersource.png" style="padding-bottom: 10px;" />
-<br>
-<a href="./payment_form.php">&lt;&lt; back</a>
+<h2>SOP - Debug</h2>
 
-<div id="container">
-<pre>
-
-change PAYMENT_URL at config.php
+change at config.php<br/>
 define('PAYMENT_URL', 'https://testsecureacceptance.cybersource.com/silent/pay');
 
+<hr/>
+
+<div id="debug">
+<pre>
 <?php
 
 $request = $_POST;
-ksort($request);
 print_r($request);
 
 ?>
 </pre>
 </div>
+
+<hr/>
+<p><a href="./payment_form.php">&lt;&lt; BACK</a></p>
 
 </body>
 </html>
