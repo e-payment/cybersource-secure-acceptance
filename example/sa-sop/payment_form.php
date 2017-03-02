@@ -67,7 +67,7 @@ include_once('config.php');
     <input type="hidden" name="item_0_sku" value="sku001" />
     <input type="hidden" name="item_0_name" value="KFLTFDIV" />
     <input type="hidden" name="item_0_quantity" value="100" />
-    <input type="hidden" name="item_0_unit_price" value="15.72" />
+    <input type="hidden" name="item_0_unit_price" value="5.72" />
 
     <input type="hidden" name="item_1_code" value="KFLTFD70" />
     <input type="hidden" name="item_1_sku" value="sku001" />

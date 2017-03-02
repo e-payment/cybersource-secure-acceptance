@@ -51,7 +51,7 @@ function setDefaultsForPaymentDetailsSection() {
     $("input[name='payment_method']").val("card");
     $("input[name='transaction_type']").val("sale");
     $("input[name='reference_number']").val(new Date().getTime());
-    $("input[name='amount']").val("2572.00");
+    $("input[name='amount']").val("1572.00");
     $("input[name='currency']").val("THB");
     $("input[name='locale']").val("en-us");
     $("input[name='bill_to_forename']").val("Krungsri");
