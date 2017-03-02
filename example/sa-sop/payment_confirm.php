@@ -65,6 +65,11 @@ include_once('security.php');
 
 <script type="text/javascript" src="/js/jquery-1.7.min.js"></script>
 <script type="text/javascript" src="/js/payment_form.js"></script>
+<script type="text/javascript" src="/js/jquery.maskedinput-1.3.js"></script>
+<script type="text/javascript">
 
+    $("#card_number").mask("9999 9999 9999 9999");
+
+</script>
 </body>
 </html>
