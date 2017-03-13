@@ -8,7 +8,7 @@
 <h2>Debug</h2>
 
 change at config.php<br/>
-define('PAYMENT_URL', 'https://testsecureacceptance.cybersource.com/silent/pay');
+define('PAYMENT_URL', 'https://testsecureacceptance.cybersource.com/pay');
 
 <hr/>
 
