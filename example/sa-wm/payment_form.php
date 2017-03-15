@@ -2,21 +2,7 @@
 
 include_once('config.php'); 
 
-ob_start();
-
-// Start a new session
-session_start();
-
-// Remove the $_SESSION variable
-session_unset();
-
-// Remove the server-side session
-session_destroy();
-
-// Generate a new session ID
-session_regenerate_id(true);
-
-ob_end_clean();
+$cancel_page = $_SERVER['HTTP_REFERER'] . 'response.php';
 
 ?>
 
@@ -30,6 +16,7 @@ ob_end_clean();
 
 <h2>Payment Form</h2>
 
+<pre><?php print_r($_SERVER); ?></pre>
 <form id="payment_form" action="payment_confirm.php" method="post">
     <input type="hidden" name="profile_id" value="<?php echo PROFILE_ID ?>">
     <input type="hidden" name="access_key" value="<?php echo ACCESS_KEY ?>">
@@ -68,7 +55,7 @@ ob_end_clean();
         </div>
     </fieldset>
 
-    <input type="hidden" name="override_custom_cancel_page"  value="http://localhost:8088/sa-wm/response.php">
+    <input type="hidden" name="override_custom_cancel_page" value="<?php echo $cancel_page ?>">
 
     <!-- MDD START -->
     <input type="hidden" name="customer_ip_address" value="<?php echo @$_SERVER['REMOTE_ADDR'] ?>">

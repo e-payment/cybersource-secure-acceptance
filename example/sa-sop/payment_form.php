@@ -38,7 +38,7 @@ include_once('config.php');
 
             <h3>Payment Information</h3>
             <span>payment_method:</span>              <input type="text" name="payment_method"><br/>
-            <span>transaction_type:</span>            <input type="text" name="transaction_type"><br/>
+            <span>transaction_type:</span>            <input type="text" name="transaction_type" value="sale"><br/>
             <span>reference_number:</span>            <input type="text" name="reference_number"><br/>
             <span>amount:</span>                      <input type="text" name="amount"><br/>
             <span>currency:</span>                    <input type="text" name="currency" max="3"><br/>

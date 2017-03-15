@@ -14,22 +14,23 @@
 <pre>
 <?php
 
-$response = $_POST;
+$response = $_REQUEST;
 $message  = $response['decision'] . ' ' . $response['reason_code'] . ' - ' . $response['message'];
-echo $message . PHP_EOL . PHP_EOL;
 
 ksort($response);
 
-echo 'payment_token: ' . $response['payment_token'] . "\n\n";
-print_r($response);
+echo $message . PHP_EOL;
+echo 'payment_token: ' . $response['payment_token'] . PHP_EOL;
 
 $params = array();
-foreach($_REQUEST as $name => $value) {
+foreach($_POST as $name => $value) {
     $params[$name] = $value;
 }
 
 $signed = (strcmp($params["signature"], sign($params)) == 0 ? "true" : "false");
-echo PHP_EOL . PHP_EOL . "Signed: " . $signed;
+echo 'signed: ' . $signed . "\n\n";
+
+print_r($response);
 
 ?>
 
@@ -37,7 +38,7 @@ echo PHP_EOL . PHP_EOL . "Signed: " . $signed;
 </div>
 
 <hr/>
-<p><a href="./payment_form.php">&lt;&lt; BACK</a></p>
+<p><a href="./">&lt;&lt; BACK</a></p>
 
 </body>
 </html>

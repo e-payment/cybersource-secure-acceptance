@@ -35,7 +35,7 @@ echo PHP_EOL . PHP_EOL . "Signed: " . $signed;
 </div>
 
 <hr/>
-<p><a href="./payment_form.php">&lt;&lt; BACK</a></p>
+<p><a href="./">&lt;&lt; BACK</a></p>
 
 </body>
 </html>
