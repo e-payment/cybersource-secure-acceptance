@@ -31,9 +31,9 @@ $cancel_page = $_SERVER['HTTP_REFERER'] . 'response.php';
         <div id="paymentDetailsSection" class="section">
 
             <span>transaction_type:</span>            <input type="text" name="transaction_type" value="sale,create_payment_token"><br/>
+            <span>reference_number:</span>            <input type="text" name="reference_number"><br/>
             <span>recurring_frequency:</span>         <input type="text" name="recurring_frequency" value="monthly"> (weekly, monthly)<br/>
             <span>recurring_amount:</span>            <input type="text" name="recurring_amount"><br/>
-            <span>reference_number:</span>            <input type="text" name="reference_number"><br/>
             <span>amount:</span>                      <input type="text" name="amount"><br/>
             <span>currency:</span>                    <input type="text" name="currency"><br/>
             <span>locale:</span>                      <input type="text" name="locale"> (en-us, th-th, ja-jp)

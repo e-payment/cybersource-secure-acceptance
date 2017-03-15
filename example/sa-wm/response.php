@@ -1,4 +1,9 @@
-<?php include 'security.php' ?>
+<?php
+
+include 'security.php';
+include '../line-notify.php';
+
+?>
 
 <html>
 <head>
@@ -15,9 +20,15 @@
 <?php
 
 $response = $_REQUEST;
-$message  = $response['decision'] . ' ' . $response['reason_code'] . ' - ' . $response['message'];
+$amount   = $response['auth_amount'];
+if (!empty($amount)) {
+	$amount  = ', ' . $amount;
+	$amount .= ' ' . $response['req_currency'];
+}
 
-ksort($response);
+$message  = 'order ref no. ' . $response['req_reference_number'] . $amount;
+$message .= ' => ' . $response['decision'] . ' ' . $response['reason_code'] . ' - ' . $response['message'];
+lineNotify($message);
 
 echo $message . PHP_EOL;
 echo 'payment_token: ' . $response['payment_token'] . PHP_EOL;
@@ -30,6 +41,7 @@ foreach($_POST as $name => $value) {
 $signed = (strcmp($params["signature"], sign($params)) == 0 ? "true" : "false");
 echo 'signed: ' . $signed . "\n\n";
 
+ksort($response);
 print_r($response);
 
 ?>

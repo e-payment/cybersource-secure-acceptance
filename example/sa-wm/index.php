@@ -12,7 +12,7 @@
 	<li><a href="payment_form.php">Payment</a></li>
 	<li><a href="payment_token.php">Tokenization</a></li>
 	<li><a href="payment_recurring.php">Recurring Billing</a></li>
-	<li><a href="#payment_installment.php">Installment</a></li>
+	<li>Installment</li>
 </ul>
 </body>
 </html>
