@@ -19,6 +19,8 @@ $message  = $response['decision'] . ' ' . $response['reason_code'] . ' - ' . $re
 echo $message . PHP_EOL . PHP_EOL;
 
 ksort($response);
+
+echo 'payment_token: ' . $response['payment_token'] . "\n\n";
 print_r($response);
 
 $params = array();
