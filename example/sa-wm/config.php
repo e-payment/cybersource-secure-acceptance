@@ -15,5 +15,7 @@ define('HMAC_SHA256', 'sha256');
 define('PAYMENT_URL', 'https://testsecureacceptance.cybersource.com/pay');
 // define('PAYMENT_URL', '/sa-wm/payment_debug.php');
 
+define('TOKEN_CREATE_URL', 'https://testsecureacceptance.cybersource.com/token/create');
+define('TOKEN_UPDATE_URL', 'https://testsecureacceptance.cybersource.com/token/update');
 
 // EOF

@@ -8,10 +8,10 @@ include '../line-notify.php';
 <html>
 <head>
     <title>Receipt</title>
-    <link rel="stylesheet" type="text/css" href="/css/payment.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/payment.css"/>
 </head>
 <body>
-<img src="/img/logo-cybersource.png" style="padding-bottom: 10px;" />
+<img src="../img/logo-cybersource.png" style="padding-bottom: 10px;" />
 <h2>Receipt</h2>
 
 <hr/>
@@ -28,7 +28,7 @@ if (!empty($amount)) {
 
 $message  = 'order ref no. ' . $response['req_reference_number'] . $amount;
 $message .= ' => ' . $response['decision'] . ' ' . $response['reason_code'] . ' - ' . $response['message'];
-lineNotify($message);
+// lineNotify($message);
 
 echo $message . PHP_EOL;
 echo 'payment_token: ' . $response['payment_token'] . PHP_EOL;

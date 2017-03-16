@@ -9,14 +9,13 @@ $cancel_page = $_SERVER['HTTP_REFERER'] . 'response.php';
 <html>
 <head>
     <title>Secure Acceptance - Payment Form</title>
-    <link rel="stylesheet" type="text/css" href="/css/payment.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/payment.css"/>
 </head>
 <body>
-<img src="/img/logo-cybersource.png" style="padding-bottom: 10px;" />
+<img src="../img/logo-cybersource.png" style="padding-bottom: 10px;" />
 
 <h2>Payment Form</h2>
 
-<pre><?php print_r($_SERVER); ?></pre>
 <form id="payment_form" action="payment_confirm.php" method="post">
     <input type="hidden" name="profile_id" value="<?php echo PROFILE_ID ?>">
     <input type="hidden" name="access_key" value="<?php echo ACCESS_KEY ?>">
@@ -82,8 +81,8 @@ $cancel_page = $_SERVER['HTTP_REFERER'] . 'response.php';
 
     <input type="submit" id="btn_submit" value="Submit"/>
 
-    <script type="text/javascript" src="/js/jquery-1.7.min.js"></script>
-    <script type="text/javascript" src="/js/payment_form.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.7.min.js"></script>
+    <script type="text/javascript" src="../js/payment_form.js"></script>
     <script type="text/javascript">
         
         function createToken(create_token) {

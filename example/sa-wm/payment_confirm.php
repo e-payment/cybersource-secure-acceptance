@@ -6,17 +6,23 @@ include_once('security.php');
 session_start();
 $df_param = 'org_id=' . DF_ORG_ID . '&amp;session_id=' . MERCHANT_ID . session_id();
 
+$endpoint_url = PAYMENT_URL;
+
+if ($_POST['transaction_type'] === 'create_payment_token') {
+    $endpoint_url = TOKEN_CREATE_URL;
+}
+
 ?>
 
 <html>
 <head>
     <title>Confirm</title>
-    <link rel="stylesheet" type="text/css" href="/css/payment.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/payment.css"/>
 </head>
 <body>
-<img src="/img/logo-cybersource.png" style="padding-bottom: 10px;" />
+<img src="../img/logo-cybersource.png" style="padding-bottom: 10px;" />
 <h2>Review &amp; Confirm</h2>
-<form id="payment_confirmation" action="<?php echo PAYMENT_URL; ?>" method="post"/>
+<form id="payment_confirmation" action="<?php echo $endpoint_url ?>" method="post"/>
 
 <?php
     foreach($_POST as $name => $value) {

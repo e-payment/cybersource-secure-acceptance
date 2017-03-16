@@ -9,10 +9,10 @@ $cancel_page = $_SERVER['HTTP_REFERER'] . 'response.php';
 <html>
 <head>
     <title>Secure Acceptance - Payment Form</title>
-    <link rel="stylesheet" type="text/css" href="/css/payment.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/payment.css"/>
 </head>
 <body>
-<img src="/img/logo-cybersource.png" style="padding-bottom: 10px;" />
+<img src="../img/logo-cybersource.png" style="padding-bottom: 10px;" />
 
 <h2>Tokenization</h2>
 
@@ -67,8 +67,8 @@ $cancel_page = $_SERVER['HTTP_REFERER'] . 'response.php';
 
     <input type="submit" id="btn_submit" value="Submit"/>
 
-    <script type="text/javascript" src="/js/jquery-1.7.min.js"></script>
-    <script type="text/javascript" src="/js/payment_form.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.7.min.js"></script>
+    <script type="text/javascript" src="../js/payment_form.js"></script>
 
 </form>
 
