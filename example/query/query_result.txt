@@ -109,3 +109,5 @@ Running 1m test @ http://127.0.0.1:8088/query/query.php
 Requests/sec:      1.55
 Transfer/sec:     13.09KB
 ------------------------------------------------------------
+2017-03-17 14:31:12  http_code: 0
+2017-03-17 14:37:20  http_code: 200

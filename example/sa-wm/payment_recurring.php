@@ -31,8 +31,8 @@ $recurring_start_date = date('Ymd');
         <legend>Payment Details</legend>
         <div id="paymentDetailsSection" class="section">
 
-            <span>transaction_type:</span>            <input type="text" name="transaction_type" value="sale,create_payment_token"><br/>
-            <span>subscription only:</span>           <input type="checkbox" id="create_token" onclick="createToken(this)"><br/>
+            <span>transaction_type:</span>            <input type="text" name="transaction_type" value="create_payment_token"><br/>
+            <span>subscription only:</span>           <input type="checkbox" id="create_token" checked="checked" onclick="createToken(this)"><br/>
             <span>reference_number:</span>            <input type="text" name="reference_number"><br/>
             <span>recurring_frequency:</span>         <input type="text" name="recurring_frequency" value="monthly"> (weekly, monthly)<br/>
             <span>recurring_start_date:</span>        <input type="text" name="recurring_start_date" value="<?php echo $recurring_start_date ?>"><br/>
