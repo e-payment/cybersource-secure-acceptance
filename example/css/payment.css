@@ -64,6 +64,10 @@ span {
     display: inline-block;
 }
 
+.key {
+    color: #ff8020;
+}
+
 #container, #debug {
     display: block;
     min-width: 768px;

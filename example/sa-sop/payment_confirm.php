@@ -8,10 +8,10 @@ include_once('security.php');
 <html>
 <head>
     <title>Confirm</title>
-    <link rel="stylesheet" type="text/css" href="/css/payment.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/payment.css"/>
 </head>
 <body>
-<img src="/img/logo-cybersource.png" style="padding-bottom: 10px;" />
+<img src="../img/logo-cybersource.png" style="padding-bottom: 10px;" />
 <h2>SOP - Review &amp; Confirm</h2>
 
 <form id="payment_confirmation" action="<?php echo PAYMENT_URL; ?>" method="post"/>
@@ -37,6 +37,8 @@ include_once('security.php');
         ?>
         </div>
     </fieldset>
+
+    <?php if (empty($params['payment_token'])) { ?>
     <p>
     <fieldset>
         <legend>Card Information</legend>  
@@ -52,6 +54,8 @@ include_once('security.php');
     </fieldset>
     <?php
 
+        }
+
         foreach ($params as $name => $value) {
             echo "<input type=\"hidden\" id=\"" . $name . "\" name=\"" . $name . "\" value=\"" . $value . "\"/>\n";
         }
@@ -63,9 +67,9 @@ include_once('security.php');
 
 </form>
 
-<script type="text/javascript" src="/js/jquery-1.7.min.js"></script>
-<script type="text/javascript" src="/js/payment_form.js"></script>
-<script type="text/javascript" src="/js/jquery.maskedinput-1.3.js"></script>
+<script type="text/javascript" src="../js/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="../js/payment_form.js"></script>
+<script type="text/javascript" src="../js/jquery.maskedinput-1.3.js"></script>
 <script type="text/javascript">
 
     $("#card_number").mask("9999 9999 9999 9999");
