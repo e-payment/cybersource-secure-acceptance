@@ -39,7 +39,7 @@ include_once('config.php');
             <h3>Payment Information</h3>
             <span>payment_method:</span>              <input type="text" name="payment_method"><br/>
             <span>transaction_type:</span>            <input type="text" name="transaction_type" value="sale"><br/>
-            <span class="key">payment_token:</span>   <input type="text" name="payment_token" value="4897097827966320004107"><br/>
+            <span class="key">payment_token:</span>   <input type="text" name="payment_token" value="4898915399206240304103"><br/>
             <span>reference_number:</span>            <input type="text" name="reference_number"><br/>
             <span>amount:</span>                      <input type="text" name="amount"><br/>
             <span>currency:</span>                    <input type="text" name="currency" max="3"><br/>
@@ -53,14 +53,14 @@ include_once('config.php');
 
     <input type="hidden" name="line_item_count" value="2" />
 
+    <input type="hidden" name="item_0_sku" value="item001" />
     <input type="hidden" name="item_0_code" value="KFLTFDIV" />
-    <input type="hidden" name="item_0_sku" value="sku001" />
     <input type="hidden" name="item_0_name" value="KFLTFDIV" />
     <input type="hidden" name="item_0_quantity" value="100" />
     <input type="hidden" name="item_0_unit_price" value="5.72" />
 
+    <input type="hidden" name="item_1_sku" value="item002" />
     <input type="hidden" name="item_1_code" value="KFLTFD70" />
-    <input type="hidden" name="item_1_sku" value="sku001" />
     <input type="hidden" name="item_1_name" value="KFLTFD70" />
     <input type="hidden" name="item_1_quantity" value="100" />
     <input type="hidden" name="item_1_unit_price" value="10.00" />
