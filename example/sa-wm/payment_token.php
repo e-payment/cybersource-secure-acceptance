@@ -24,7 +24,7 @@ $cancel_page = $_SERVER['HTTP_REFERER'] . 'response.php';
 
     <input type="hidden" name="signed_field_names" value="profile_id,access_key,transaction_uuid,signed_field_names,unsigned_field_names,signed_date_time,locale,transaction_type,reference_number,payment_token,amount,currency">
     
-    <input type="hidden" name="unsigned_field_names" value="override_custom_cancel_page,signature,customer_ip_address,line_item_count,item_0_code,item_0_sku,item_0_name,item_0_quantity,item_0_unit_price,item_1_code,item_1_sku,item_1_name,item_1_quantity,item_1_unit_price,merchant_defined_data1,merchant_defined_data2,merchant_defined_data3,merchant_defined_data4">
+    <input type="hidden" name="unsigned_field_names" value="device_fingerprint_id,override_custom_cancel_page,signature,customer_ip_address,line_item_count,item_0_code,item_0_sku,item_0_name,item_0_quantity,item_0_unit_price,item_1_code,item_1_sku,item_1_name,item_1_quantity,item_1_unit_price,merchant_defined_data1,merchant_defined_data2,merchant_defined_data3,merchant_defined_data4">
 
     <fieldset>
         <legend>Payment Details</legend>
@@ -32,7 +32,7 @@ $cancel_page = $_SERVER['HTTP_REFERER'] . 'response.php';
 
             <span>transaction_type:</span>            <input type="text" name="transaction_type" value="sale"><br/>
             <span>reference_number:</span>            <input type="text" name="reference_number"><br/>
-            <span>payment_token:</span>               <input type="text" name="payment_token" value="4895822548306546604104"><br/>
+            <span class="keyitem">payment_token:</span> <input type="text" name="payment_token" value="4895822548306546604104"><br/>
             <span>amount:</span>                      <input type="text" name="amount"><br/>
             <span>currency:</span>                    <input type="text" name="currency"><br/>
             <span>locale:</span>                      <input type="text" name="locale"> (en-us, th-th, ja-jp)

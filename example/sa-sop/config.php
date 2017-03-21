@@ -15,4 +15,7 @@ define('HMAC_SHA256', 'sha256');
 define('PAYMENT_URL', 'https://testsecureacceptance.cybersource.com/silent/pay');
 // define('PAYMENT_URL', '/sa-sop/payment_debug.php');
 
+define('TOKEN_CREATE_URL', 'https://testsecureacceptance.cybersource.com/silent/token/create');
+define('TOKEN_UPDATE_URL', 'https://testsecureacceptance.cybersource.com/silent/token/update');
+
 // EOF

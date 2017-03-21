@@ -3,6 +3,15 @@
 include_once('config.php');
 include_once('security.php');
 
+session_start();
+$sess_id  = session_id();
+$df_param = 'org_id=' . DF_ORG_ID . '&amp;session_id=' . MERCHANT_ID . $sess_id;
+
+$endpoint_url = PAYMENT_URL;
+if ($_POST['transaction_type'] === 'create_payment_token') {
+    $endpoint_url = TOKEN_CREATE_URL;
+}
+
 ?>
 
 <html>
@@ -14,7 +23,7 @@ include_once('security.php');
 <img src="../img/logo-cybersource.png" style="padding-bottom: 10px;" />
 <h2>SOP - Review &amp; Confirm</h2>
 
-<form id="payment_confirmation" action="<?php echo PAYMENT_URL; ?>" method="post"/>
+<form id="payment_confirmation" action="<?php echo $endpoint_url ?>" method="post"/>
 <?php
 
     foreach (@$_POST as $name => $value) {
@@ -62,9 +71,10 @@ include_once('security.php');
             echo "<input type=\"hidden\" id=\"" . $name . "\" name=\"" . $name . "\" value=\"" . $value . "\"/>\n";
         }
 
-        echo "<input type=\"hidden\" id=\"signature\" name=\"signature\" value=\"" . sign($params) . "\"/>\n";
     ?>
 
+    <input type="hidden" name="device_fingerprint_id" value="<?php echo $sess_id ?>" />
+    <input type="hidden" name="signature" value="<?php echo sign($params) ?>" />
     <input type="submit" id="btn_submit" value="Confirm"/>
 
 </form>
@@ -77,5 +87,14 @@ include_once('security.php');
     $("#card_number").mask("9999 9999 9999 9999");
 
 </script>
+
+<!-- DF START -->
+
+device_fingerprint_param: <?php echo $df_param ?>
+
+<p style="background:url(https://h.online-metrix.net/fp/clear.png?<?php echo $df_param ?>&amp;m=1)"></p>
+<img src="https://h.online-metrix.net/fp/clear.png?<?php echo $df_param ?>&amp;m=2" width="1" height="1" />
+<!-- DF END -->
+
 </body>
 </html>

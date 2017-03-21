@@ -24,7 +24,7 @@ $cancel_page = $_SERVER['HTTP_REFERER'] . 'response.php';
 
     <input type="hidden" name="signed_field_names" value="profile_id,access_key,transaction_uuid,signed_field_names,unsigned_field_names,signed_date_time,locale,transaction_type,reference_number,amount,currency">
     
-    <input type="hidden" name="unsigned_field_names" value="override_custom_cancel_page,signature,bill_to_forename,bill_to_surname,bill_to_email,bill_to_phone,bill_to_address_line1,bill_to_address_line2,bill_to_address_city,bill_to_address_state,bill_to_address_country,bill_to_address_postal_code,customer_ip_address,line_item_count,item_0_code,item_0_sku,item_0_name,item_0_quantity,item_0_unit_price,item_1_code,item_1_sku,item_1_name,item_1_quantity,item_1_unit_price,merchant_defined_data1,merchant_defined_data2,merchant_defined_data3,merchant_defined_data4">
+    <input type="hidden" name="unsigned_field_names" value="device_fingerprint_id,override_custom_cancel_page,signature,bill_to_forename,bill_to_surname,bill_to_email,bill_to_phone,bill_to_address_line1,bill_to_address_line2,bill_to_address_city,bill_to_address_state,bill_to_address_country,bill_to_address_postal_code,customer_ip_address,line_item_count,item_0_code,item_0_sku,item_0_name,item_0_quantity,item_0_unit_price,item_1_code,item_1_sku,item_1_name,item_1_quantity,item_1_unit_price,merchant_defined_data1,merchant_defined_data2,merchant_defined_data3,merchant_defined_data4">
 
     <fieldset>
         <legend>Payment Details</legend>
@@ -61,14 +61,14 @@ $cancel_page = $_SERVER['HTTP_REFERER'] . 'response.php';
 
     <input type="hidden" name="line_item_count" value="2"/>
 
-    <input type="hidden" name="item_0_code" value="KFLTFDIV">
     <input type="hidden" name="item_0_sku" value="sku001"/>
-    <input type="hidden" name="item_0_name" value="Krungsri LTF DIV">
+    <input type="hidden" name="item_0_code" value="KFLTFDIV">
+    <input type="hidden" name="item_0_name" value="KFLTFDIV">
     <input type="hidden" name="item_0_quantity" value="100">
     <input type="hidden" name="item_0_unit_price" value="15.72">
 
+    <input type="hidden" name="item_1_sku" value="sku002"/>
     <input type="hidden" name="item_1_code" value="KFLTFD70">
-    <input type="hidden" name="item_1_sku" value="sku001"/>
     <input type="hidden" name="item_1_name" value="KFLTFD70">
     <input type="hidden" name="item_1_quantity" value="100">
     <input type="hidden" name="item_1_unit_price" value="10.00">

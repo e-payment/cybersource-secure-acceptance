@@ -25,7 +25,7 @@ $recurring_start_date = date('Ymd');
 
     <input type="hidden" name="signed_field_names" value="profile_id,access_key,transaction_uuid,signed_field_names,unsigned_field_names,signed_date_time,locale,transaction_type,recurring_frequency,recurring_start_date,recurring_amount,reference_number,amount,currency">
     
-    <input type="hidden" name="unsigned_field_names" value="override_custom_cancel_page,signature,bill_to_forename,bill_to_surname,bill_to_email,bill_to_phone,bill_to_address_line1,bill_to_address_line2,bill_to_address_city,bill_to_address_state,bill_to_address_country,bill_to_address_postal_code,customer_ip_address,merchant_defined_data1,merchant_defined_data2,merchant_defined_data3,merchant_defined_data4">
+    <input type="hidden" name="unsigned_field_names" value="device_fingerprint_id,override_custom_cancel_page,signature,bill_to_forename,bill_to_surname,bill_to_email,bill_to_phone,bill_to_address_line1,bill_to_address_line2,bill_to_address_city,bill_to_address_state,bill_to_address_country,bill_to_address_postal_code,customer_ip_address,merchant_defined_data1,merchant_defined_data2,merchant_defined_data3,merchant_defined_data4">
 
     <fieldset>
         <legend>Payment Details</legend>
@@ -34,9 +34,9 @@ $recurring_start_date = date('Ymd');
             <span>transaction_type:</span>            <input type="text" name="transaction_type" value="create_payment_token"><br/>
             <span>subscription only:</span>           <input type="checkbox" id="create_token" checked="checked" onclick="createToken(this)"><br/>
             <span>reference_number:</span>            <input type="text" name="reference_number"><br/>
-            <span>recurring_frequency:</span>         <input type="text" name="recurring_frequency" value="monthly"> (weekly, monthly)<br/>
-            <span>recurring_start_date:</span>        <input type="text" name="recurring_start_date" value="<?php echo $recurring_start_date ?>"><br/>
-            <span>recurring_amount:</span>            <input type="text" name="recurring_amount"><br/>
+            <span class="keyitem">recurring_frequency:</span>   <input type="text" name="recurring_frequency" value="monthly"> (weekly, monthly)<br/>
+            <span class="keyitem">recurring_start_date:</span>  <input type="text" name="recurring_start_date" value="<?php echo $recurring_start_date ?>"><br/>
+            <span class="keyitem">recurring_amount:</span>      <input type="text" name="recurring_amount"><br/>
             <span>amount:</span>                      <input type="text" name="amount"><br/>
             <span>currency:</span>                    <input type="text" name="currency"><br/>
             <span>locale:</span>                      <input type="text" name="locale"> (en-us, th-th, ja-jp)

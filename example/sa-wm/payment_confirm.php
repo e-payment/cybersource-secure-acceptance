@@ -4,10 +4,10 @@ include_once('config.php');
 include_once('security.php');
 
 session_start();
-$df_param = 'org_id=' . DF_ORG_ID . '&amp;session_id=' . MERCHANT_ID . session_id();
+$sess_id  = session_id();
+$df_param = 'org_id=' . DF_ORG_ID . '&amp;session_id=' . MERCHANT_ID . $sess_id;
 
 $endpoint_url = PAYMENT_URL;
-
 if ($_POST['transaction_type'] === 'create_payment_token') {
     $endpoint_url = TOKEN_CREATE_URL;
 }
@@ -48,25 +48,19 @@ if ($_POST['transaction_type'] === 'create_payment_token') {
         }
     ?>
 
-    <input type="hidden" name="device_fingerprint_param" value="<?php echo $df_param ?>" />
+    <input type="hidden" name="device_fingerprint_id" value="<?php echo $sess_id ?>" />
     <input type="hidden" name="signature" value="<?php echo sign($params) ?>" />
     <input type="submit" id="btn_submit" value="Confirm"/>
 
+</form>
+
 <!-- DF START -->
+
+device_fingerprint_param: <?php echo $df_param ?>
+
 <p style="background:url(https://h.online-metrix.net/fp/clear.png?<?php echo $df_param ?>&amp;m=1)"></p>
 <img src="https://h.online-metrix.net/fp/clear.png?<?php echo $df_param ?>&amp;m=2" width="1" height="1" />
-
-<!--
-<object type="application/x-shockwave-flash" width="1" height="1" id="thm_fp"
-        data="https://h.online-metrix.net/fp/fp.swf?<?php echo $df_param ?>">
-    <param name="movie" value="https://h.online-metrix.net/fp/fp.swf?<?php echo $df_param ?>" />
-</object>
-
-<script type="text/javascript" src="https://h.online-metrix.net/fp/check.js?<?php echo $df_param ?>"></script>
--->
-
 <!-- DF END -->
 
-</form>
 </body>
 </html>
