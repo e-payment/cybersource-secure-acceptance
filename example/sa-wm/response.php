@@ -4,7 +4,7 @@ include 'security.php';
 include '../line-notify.php';
 
 ?>
-
+<!DOCTYPE html>
 <html>
 <head>
     <title>Receipt</title>

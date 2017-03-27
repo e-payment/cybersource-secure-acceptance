@@ -6,7 +6,7 @@ $response_page = $_SERVER['HTTP_REFERER'] . 'response.php';
 $recurring_start_date = date('Ymd');
 
 ?>
-
+<!DOCTYPE html>
 <html>
 <head>
     <title>Secure Acceptance - Payment Form</title>

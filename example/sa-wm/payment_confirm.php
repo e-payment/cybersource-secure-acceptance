@@ -13,7 +13,7 @@ if ($_POST['transaction_type'] === 'create_payment_token') {
 }
 
 ?>
-
+<!DOCTYPE html>
 <html>
 <head>
     <title>Confirm</title>

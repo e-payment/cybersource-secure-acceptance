@@ -5,7 +5,7 @@ include_once('config.php');
 $response_page = $_SERVER['HTTP_REFERER'] . 'response.php';
 
 ?>
-
+<!DOCTYPE html>
 <html>
 <head>
     <title>Secure Acceptance - Payment Form</title>
