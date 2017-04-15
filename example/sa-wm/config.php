@@ -1,5 +1,7 @@
 <?php
 
+//date_default_timezone_set('Asia/Bangkok');
+
 define('MERCHANT_ID', 'kr950210047');
 
 // DF TEST: 1snn5n9w, LIVE: k8vif92e 

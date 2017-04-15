@@ -31,7 +31,7 @@ $message .= ' => ' . $response['decision'] . ' ' . $response['reason_code'] . ' 
 // lineNotify($message);
 
 echo $message . PHP_EOL;
-echo 'payment_token: ' . $response['payment_token'] . PHP_EOL;
+echo 'payment_token: ' . @$response['payment_token'] . PHP_EOL;
 
 $params = array();
 foreach($_POST as $name => $value) {
