@@ -57,7 +57,7 @@ function setDefaultsForPaymentDetailsSection() {
     $("input[name='locale']").val("en-us");
     $("input[name='bill_to_forename']").val("Krungsri");
     $("input[name='bill_to_surname']").val("Simple");
-    $("input[name='bill_to_email']").val("customer@merchant.com");
+    $("input[name='bill_to_email']").val("customer@mail.com");
     $("input[name='bill_to_phone']").val("+662-2962-000");
     $("input[name='bill_to_address_line1']").val("1222 Rama III Road");
     $("input[name='bill_to_address_line2']").val("Bang Phongphang");

@@ -10,8 +10,7 @@ $url = 'https://ebctest.cybersource.com/ebctest/Query';
 
 $username = 'itcybs';
 $password = 'Password007';
-
-$use_proxy = true;
+$use_proxy = false;
 
 //create array of data to be posted
 $post_data['merchantID']              = 'kr950210047';
