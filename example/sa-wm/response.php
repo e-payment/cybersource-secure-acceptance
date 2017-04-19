@@ -20,14 +20,14 @@ include '../line-notify.php';
 <?php
 
 $response = $_REQUEST;
-$amount   = $response['auth_amount'];
+$amount   = @$response['auth_amount'];
 if (!empty($amount)) {
 	$amount  = ', ' . $amount;
 	$amount .= ' ' . $response['req_currency'];
 }
 
 $message  = 'order ref no. ' . $response['req_reference_number'] . $amount;
-$message .= ' => ' . $response['decision'] . ' ' . $response['reason_code'] . ' - ' . $response['message'];
+$message .= ' => ' . $response['decision'] . ' ' . @$response['reason_code'] . ' - ' . $response['message'];
 // lineNotify($message);
 
 echo $message . PHP_EOL;
