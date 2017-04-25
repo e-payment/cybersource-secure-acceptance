@@ -15,7 +15,7 @@
 <?php
 
 $response = $_REQUEST;
-$amount   = $response['auth_amount'];
+$amount   = @$response['auth_amount'];
 if (!empty($amount)) {
 	$amount  = ', ' . $amount;
 	$amount .= ' ' . $response['req_currency'];
