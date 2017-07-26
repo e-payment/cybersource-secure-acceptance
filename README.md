@@ -28,12 +28,12 @@ java -jar target\dependency\jetty-runner.jar target\*.war --path /cybs-sa
 #### Admin
  - CyberSource Merchant ID: 950212563_acct
  - Username: admin
- - Password: Pa******02
+ - Password: Pa******03
 
 #### Merchant
  - CyberSource Merchant ID: 950212563
  - Username: merchant
- - Password: Pa******02
+ - Password: Pa******03
 
 #### Menu
 - Transaction Search > General Search
