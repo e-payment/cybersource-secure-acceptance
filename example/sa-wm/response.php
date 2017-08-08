@@ -26,7 +26,7 @@ if (!empty($amount)) {
 	$amount .= ' ' . $response['req_currency'];
 }
 
-$message  = 'order ref no. ' . $response['req_reference_number'] . $amount;
+$message  = 'req_reference_number: ' . $response['req_reference_number'] . $amount;
 $message .= ' => ' . $response['decision'] . ' ' . @$response['reason_code'] . ' - ' . $response['message'];
 // lineNotify($message);
 
