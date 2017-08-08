@@ -48,9 +48,12 @@ function capitalize(string) {
 }
 
 function setDefaultsForPaymentDetailsSection() {
+
+    var merchant_ref_no = 'B' + new Date().getTime();
     $("input[name='payment_method']").val("card");
     //$("input[name='transaction_type']").val("sale");
-    $("input[name='reference_number']").val(new Date().getTime());
+    $("input[name='reference_number']").val(merchant_ref_no);
+    $("input[name='auth_trans_ref_no']").val(merchant_ref_no);
     $("input[name='recurring_amount']").val("1572.00");
     $("input[name='amount']").val("1572.00");
     $("input[name='currency']").val("THB");
