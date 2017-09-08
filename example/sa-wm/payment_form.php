@@ -44,8 +44,8 @@ $response_page = $_SERVER['HTTP_REFERER'] . 'response.php';
             <span>bill_to_phone:</span>               <input type="text" name="bill_to_phone"><br/>
 
             <p>
-            <span>bill_to_address_line1:</span>       <input type="text" name="bill_to_address_line1"><br/>
-            <span>bill_to_address_line2:</span>       <input type="text" name="bill_to_address_line2"><br/>
+            <span>bill_to_address_line1:</span>       <input type="text" name="bill_to_address_line1" maxlength="60"><br/>
+            <span>bill_to_address_line2:</span>       <input type="text" name="bill_to_address_line2" maxlength="60"><br/>
             <span>bill_to_address_city:</span>        <input type="text" name="bill_to_address_city"><br/>
             <span>bill_to_address_state:</span>       <input type="text" name="bill_to_address_state"><br/>
             <span>bill_to_address_country:</span>     <input type="text" name="bill_to_address_country"><br/>

@@ -12,10 +12,12 @@ define('SECRET_KEY', '63477cc16ce44f549d24cf4f2a9a08d6310381bd813b48febd9c34ab1f
 define('HMAC_SHA256', 'sha256');
 
 // PAYMENT URL
-define('PAYMENT_URL', 'https://testsecureacceptance.cybersource.com/silent/pay');
+define('CYBS_BASE_URL', 'https://testsecureacceptance.cybersource.com/silent');
+
+define('PAYMENT_URL', CYBS_BASE_URL . '/pay');
 // define('PAYMENT_URL', '/sa-sop/payment_debug.php');
 
-define('TOKEN_CREATE_URL', 'https://testsecureacceptance.cybersource.com/silent/token/create');
-define('TOKEN_UPDATE_URL', 'https://testsecureacceptance.cybersource.com/silent/token/update');
+define('TOKEN_CREATE_URL', CYBS_BASE_URL . '/token/create');
+define('TOKEN_UPDATE_URL', CYBS_BASE_URL . '/token/update');
 
 // EOF
