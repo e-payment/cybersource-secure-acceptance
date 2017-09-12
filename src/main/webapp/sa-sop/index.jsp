@@ -1,6 +1,8 @@
 <html>
 <head>
     <title>Secure Acceptance</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="image/x-icon" href="../favicon.png" rel="shortcut icon">
     <link rel="stylesheet" type="text/css" href="../css/payment.css"/>
 </head>
 <body>
@@ -9,9 +11,9 @@
 <h2>Secure Acceptance - Silent Order Post</h2>
 
 <ul>
-	<li><a href="payment_form.php">Payment</a></li>
-	<li><a href="payment_token.php">Tokenization</a></li>
-	<li><a href="payment_recurring.php">Recurring Billing</a></li>
+	<li><a href="payment_form.jsp">Payment</a></li>
+	<li><a href="payment_token.jsp">Tokenization</a></li>
+	<li><a href="payment_recurring.jsp">Recurring Billing</a></li>
 	<li>Installment</li>
 </ul>
 

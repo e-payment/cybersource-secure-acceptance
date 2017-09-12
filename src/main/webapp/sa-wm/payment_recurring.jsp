@@ -3,7 +3,6 @@
 include_once('config.php'); 
 
 $response_page = $_SERVER['HTTP_REFERER'] . 'response.php';
-$recurring_start_date = date('Ymd');
 
 ?>
 <!DOCTYPE html>

@@ -5,10 +5,10 @@
 <%@ page import="java.security.InvalidKeyException" %>
 <%@ page import="java.security.NoSuchAlgorithmException" %>
 <%@ page import="java.util.*" %>
+<%@ include file="config.jsp" %>
 <%!
 	private static final String ALGORITHM  = "HmacSHA256";
-	private static final String SECRET_KEY = "9a5d4d3a6f9845bf96372912813ff4582e71cf2482c14924b6a8a56b146d79bb5ec5b1b6ea5449229eaefaea522d1e25edd359e9c16946b691c504850cb5e9cb188383e627594e19b925de7a36ab06dcc23511ddc0754c86836feedf500332452f8bc1f455d44af5aae4dcbfe2cbec14b4b8644878ea40fab7f761cd6c9c96b1";
-	
+
 	private String sign(Map params) throws InvalidKeyException, NoSuchAlgorithmException {
 		return sign(buildDataToSign(params), SECRET_KEY);
 	}
