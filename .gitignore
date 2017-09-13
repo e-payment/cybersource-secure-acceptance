@@ -29,4 +29,6 @@ target/
 #*.p12
 *.db
 
-**/config.jsp
+**/config.*
+**/report/
+**/notify/

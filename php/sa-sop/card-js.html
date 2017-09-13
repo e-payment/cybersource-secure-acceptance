@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CardJs</title>
+    <meta name="viewport" content="initial-scale=1" />
+    <link type="text/css" rel="stylesheet" href="../css/card-js.min.css"  />
+    <style type="text/css">
+
+      #container-card {
+        display: none;
+        text-align: center;
+        width: 280px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="container-card">
+      <form id="frmCard" method="post" action="payment_debug.php">
+        <div id="my-card" class="card-js" data-capture-name="true" data-icon-colour="#337ab7">
+          <input class="card-number" placeholder="หมายเลขบัตร" />
+          <input class="name englishonly" placeholder="ชื่อผู้ถือบัตร" maxlength="21" />
+          <input class="expiry-month" />
+          <input class="expiry-year" />
+          <input class="cvc" />
+        </div>
+        <input type="hidden" id="card_number" name="card_number" />
+        <input type="hidden" id="card_type"   name="card_type" />
+        <input type="hidden" id="card_name"   name="card_name" />
+        <input type="hidden" id="card_expiry" name="card_expiry_date" />
+        <input type="hidden" id="card_cvn"    name="card_cvn" />
+        
+        <p>
+        <input type="submit" />
+      </form>
+    </div>
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/card-js.min.js"></script>
+    <script>
+
+      var cardTypes = { Visa: '001', Mastercard: '002', JCB: '007' };
+
+      var getCybsCardType = function(typeName) {
+        return cardTypes[typeName];
+      };
+
+      var getExpiry = function(mm, yy) {
+        return (mm.length == 2 && yy.length == 2) ? mm + '-20' + yy : '';
+      };
+
+      $(document).ready(function() {
+        console.log( "ready!" );
+        $("#container-card").show();
+      });
+
+      $('.name').attr('style', 'text-transform: uppercase');
+      $(".englishonly").on("keypress", function(event) {
+
+        var ALPHA_NUMERIC_SPACE = /[A-Za-z0-9 ]/g;
+        var key = String.fromCharCode(event.which);
+
+        if (event.keyCode == 8  || event.keyCode == 37 ||
+            event.keyCode == 39 || ALPHA_NUMERIC_SPACE.test(key)) {
+            return true;
+        }
+
+        return false;
+      });
+
+      $('.englishonly').on("paste", function(e) {
+        e.preventDefault();
+      });
+
+      $('#frmCard').submit(function() {
+        return updateCardValue();
+      });
+
+      function updateCardValue() {
+
+        var myCard      = $('#my-card');
+        //var cardNumber  = (myCard.CardJs('cardNumber')).replace(/ /g, '');
+        var cardNumber  = CardJs.numbersOnlyString(myCard.CardJs('cardNumber'));
+        var cardType    = myCard.CardJs('cardType');
+        var name        = myCard.CardJs('name');
+        var expiryMonth = myCard.CardJs('expiryMonth');
+        var expiryYear  = myCard.CardJs('expiryYear');
+        var cvc         = myCard.CardJs('cvc');
+
+        cybsCardType    = getCybsCardType(cardType);
+        expiry          = getExpiry(expiryMonth, expiryYear);
+
+        console.log(cybsCardType);
+
+        $("#card_type").val(cybsCardType);
+        $("#card_number").val(cardNumber);
+        $("#card_name").val(name);
+        $("#card_expiry").val(expiry);
+        $("#card_cvn").val(cvc);
+
+        return true;
+      }
+
+      function getBase64FromImageUrl(url) {
+
+        var img = new Image();
+        img.setAttribute('crossOrigin', 'anonymous');
+
+        img.onload = function () {
+            var canvas = document.createElement("canvas");
+            canvas.width = this.width;
+            canvas.height = this.height;
+
+            var ctx = canvas.getContext("2d");
+            ctx.drawImage(this, 0, 0);
+
+            var dataURL = canvas.toDataURL("image/png");
+            console.log(dataURL);
+            //console.log(dataURL.replace(/^data:image\/(png|jpg);base64,/, ""));
+        };
+
+        img.src = url;
+      }
+
+      //getBase64FromImageUrl('../img/cards.png');
+
+    </script>
+  </body>
+</html>
