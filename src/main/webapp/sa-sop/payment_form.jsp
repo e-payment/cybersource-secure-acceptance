@@ -46,7 +46,7 @@ responsePage = responsePage.replaceAll("payment_form.jsp", "response.jsp");
 
             <h3>Payment Information</h3>
             <span>payment_method:</span>              <input type="text" name="payment_method"><br/>
-            <span>transaction_type:</span>            <input type="text" name="transaction_type" value="sale"><br/>
+            <span>transaction_type:</span>            <input type="text" name="transaction_type" value="sale"> authorization, sale<br/>
             <span>create_token:</span>                <input type="checkbox" id="create_token" onclick="createToken(this)"><br/>
             <span>reference_number:</span>            <input type="text" name="reference_number"><br/>
             <span><b>auth_trans_ref_no</b>:</span>    <input type="text" name="auth_trans_ref_no"><br/>
