@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5DFDB303-9203-4BBE-B5F6-8F4D5D3B018D}</ProjectGuid>
+    <ProjectTypeGuids>{349C5851-65DF-11DA-9384-00065B846F21};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>sawm</RootNamespace>
+    <AssemblyName>sa-wm</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Web.Services" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Web.config" />
+    <Content Include="Default.aspx" />
+    <Content Include="PaymentForm.aspx" />
+    <Content Include="PaymentConfirm.aspx" />
+    <Content Include="Response.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentForm.aspx.cs">
+      <DependentUpon>PaymentForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentForm.aspx.designer.cs">
+      <DependentUpon>PaymentForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentConfirm.aspx.cs">
+      <DependentUpon>PaymentConfirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentConfirm.aspx.designer.cs">
+      <DependentUpon>PaymentConfirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Response.aspx.cs">
+      <DependentUpon>Response.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Response.aspx.designer.cs">
+      <DependentUpon>Response.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Security.cs" />
+    <Compile Include="Config.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <XspParameters Port="8088" Address="127.0.0.1" SslMode="None" SslProtocol="Tls" KeyType="Pkcs12" CertFile="" KeyFile="" PasswordOptions="Store" Password="" Verbose="True" />
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+</Project>
