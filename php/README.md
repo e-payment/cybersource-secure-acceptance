@@ -9,13 +9,12 @@ To run the examples first create a file `config.php` under directory `sa-sop` an
 <?php
 
 define('MERCHANT_ID', '<MERCHANT_ID>');
+define('PROFILE_ID',  '<PROFILE_ID>');
+define('ACCESS_KEY',  '<ACCESS_KEY>');
+define('SECRET_KEY',  '<SECRET_KEY>');
 
 // DF TEST: 1snn5n9w, LIVE: k8vif92e 
 define('DF_ORG_ID', '1snn5n9w');
-
-define('PROFILE_ID', '<PROFILE_ID>');
-define('ACCESS_KEY', '<ACCESS_KEY>');
-define('SECRET_KEY', '<SECRET_KEY>');
 
 // PAYMENT URL
 define('CYBS_BASE_URL', 'https://testsecureacceptance.cybersource.com/silent');
