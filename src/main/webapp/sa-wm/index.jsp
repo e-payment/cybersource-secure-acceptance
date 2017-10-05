@@ -10,9 +10,9 @@
 <h2>Secure Acceptance - Web/Mobile</h2>
 
 <ul>
-	<li><a href="payment_form.php">Payment</a></li>
-	<li><a href="payment_token.php">Tokenization</a></li>
-	<li><a href="payment_recurring.php">Recurring Billing</a></li>
+	<li><a href="payment_form.jsp">Payment</a></li>
+	<li><a href="payment_token.jsp">Tokenization</a></li>
+	<li><a href="payment_recurring.jsp">Recurring Billing</a></li>
 	<li>Installment</li>
 </ul>
 
