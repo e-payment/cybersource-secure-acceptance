@@ -1,13 +1,11 @@
-<?php
-
-include 'security.php';
-include '../line-notify.php';
-
-?>
+<%@ page contentType="text/html;charset=UTF-8"  language="java" pageEncoding="UTF-8"%>
+<%@ include file="security.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Receipt</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="image/x-icon" href="../favicon.png" rel="shortcut icon">
     <link rel="stylesheet" type="text/css" href="../css/payment.css"/>
 </head>
 <body>
@@ -15,38 +13,58 @@ include '../line-notify.php';
 <h2>Receipt</h2>
 
 <hr/>
-<div id="container">
+<div style="display: block">
 <pre>
-<?php
+<%
 
-$response = $_REQUEST;
-$amount   = @$response['auth_amount'];
-if (!empty($amount)) {
-	$amount  = ', ' . $amount;
-	$amount .= ' ' . $response['req_currency'];
-}
+	String decision     = request.getParameter("decision");
+	String reasonCode   = request.getParameter("reason_code");
+	String message      = request.getParameter("message");
+	String refNumber    = request.getParameter("req_reference_number");
+	String reconcileId  = request.getParameter("auth_trans_ref_no");
+	String amount       = request.getParameter("auth_amount");
+	String currency     = request.getParameter("req_currency");
+	String signature    = request.getParameter("signature");
 
-$message  = 'req_reference_number: ' . $response['req_reference_number'] . $amount;
-$message .= ' => ' . $response['decision'] . ' ' . @$response['reason_code'] . ' - ' . $response['message'];
-// lineNotify($message);
+	out.println("decision        : " + decision);
+	out.println("reasonCode      : " + reasonCode);
+	out.println("message         : " + message);
+	out.println("ref number      : " + refNumber);
+	out.println("reconcile Id    : " + reconcileId);
 
-echo $message . PHP_EOL;
-echo 'payment_token: ' . @$response['payment_token'] . PHP_EOL;
+	if (amount != null) {
+	    out.println("amount          : " + amount + " " + currency);
+	}
+	
+	out.println("payment_token   : " + request.getParameter("payment_token"));
 
-$params = array();
-foreach($_POST as $name => $value) {
-    $params[$name] = $value;
-}
+    Map params = new HashMap();
+    List<String> keys = Collections.list(request.getParameterNames());
+    Collections.sort(keys);
 
-$signed = (strcmp($params["signature"], sign($params)) == 0 ? "true" : "false");
-echo 'signed: ' . $signed . "\n\n";
+    for (String key : keys) {
+        params.put(key, request.getParameter(key));
+    }
 
-ksort($response);
-print_r($response);
-
-?>
-
+	boolean signed = signature.equals(sign(params));
+	out.println("valid signature : " + signed);
+%>
 </pre>
+<div style="display: block">
+    <fieldset>
+        <legend>Response Fields</legend>
+<%
+
+    for (String name: keys) { 
+        String value = (String) request.getParameter(name);
+
+        out.println("<div>");
+        out.println("<span class='fieldName'>" + name + "</span><span class='fieldValue'>" + value + "</span>");
+        out.println("</div>");
+    }
+
+%>
+    </fieldset>
 </div>
 
 <hr/>
