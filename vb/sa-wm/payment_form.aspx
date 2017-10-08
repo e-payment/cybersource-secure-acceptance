@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="payment_form.aspx.vb" Inherits="payment_form" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html>
 <head>
     <title>Secure Acceptance - Payment Form Example</title>
@@ -9,8 +9,8 @@
 </head>
 <body>
 <form id="payment_form" action="payment_confirmation.aspx" method="post">
-    <input type="hidden" name="access_key" value="<REPLACE WITH ACCESS KEY>"/>
-    <input type="hidden" name="profile_id" value="<REPLACE WITH PROFILE ID>"/>
+    <input type="hidden" name="profile_id" value="291CDD47-6036-4C1E-BB97-B5CDA504B76F"/>
+    <input type="hidden" name="access_key" value="f854903616a93495b4dfccbd075bad8b"/>
     <input type="hidden" name="transaction_uuid" value="<% Response.Write(getUUID()) %>"/>
     <input type="hidden" name="signed_field_names" value="access_key,profile_id,transaction_uuid,signed_field_names,unsigned_field_names,signed_date_time,locale,transaction_type,reference_number,amount,currency"/>
     <input type="hidden" name="unsigned_field_names"/>
