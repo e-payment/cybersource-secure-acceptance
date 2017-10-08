@@ -28,7 +28,7 @@
             Response.Write("<input type=""hidden"" id=""" + key + """ name=""" + key + """ value=""" + Request.Params(key) + """/>")
             parameters.Add(key, Request.Params(key))
         Next
-        Response.Write("<input type=""hidden"" id=""signature"" name=""signature"" value=""" + security.sign(parameters) + """/>")
+        Response.Write("<input type=""hidden"" id=""signature"" name=""signature"" value=""" + CyberSource.Security.sign(parameters) + """/>")
     %>
 <input type="submit" id="submit" value="Confirm"/>
 </form>

@@ -19,27 +19,32 @@ CyberSource Secure Acceptance
 To run the examples first create a file `config.vb` under directory `sa-wm\App_Code`
 
 ```vb
-Public Class config
 
-    Public Const MERCHANT_ID As String = "<MERCHANT_ID>"
+Namespace CyberSource
 
-    'DF TEST: 1snn5n9w, LIVE: k8vif92e 
-    Public Const DF_ORG_ID AS = "1snn5n9w"
+    Public Class Config
 
-    Public Const PROFILE_ID As String = "<PROFILE_ID>"
-    Public Const ACCESS_KEY As String = "<ACCESS_KEY>"
-    Public Const SECRET_KEY As String = "<SECRET_KEY>"
-    '<REPLACE WITH SECRET KEY>
+        Public Const MERCHANT_ID As String = "<MERCHANT_ID>"
 
-    'PAYMENT URL
-    Public Const CYBS_BASE_URL As String = "https://testsecureacceptance.cybersource.com"
-    Public Const PAYMENT_URL As String   = CYBS_BASE_URL + "/pay"
-    'Public Const PAYMENT_URL As String  = "debug.aspx"
+        'DF TEST: 1snn5n9w, LIVE: k8vif92e 
+        Public Const DF_ORG_ID AS = "1snn5n9w"
 
-    'Public Const TOKEN_CREATE_URL As String = CYBS_BASE_URL + "/token/create"
-    'Public Const TOKEN_UPDATE_URL As String = CYBS_BASE_URL + "/token/update"
+        Public Const PROFILE_ID As String = "<PROFILE_ID>"
+        Public Const ACCESS_KEY As String = "<ACCESS_KEY>"
+        Public Const SECRET_KEY As String = "<SECRET_KEY>"
+        '<REPLACE WITH SECRET KEY>
 
-End Class
+        'PAYMENT URL
+        Public Const CYBS_BASE_URL As String = "https://testsecureacceptance.cybersource.com"
+        Public Const PAYMENT_URL As String   = CYBS_BASE_URL + "/pay"
+        'Public Const PAYMENT_URL As String  = "debug.aspx"
+
+        'Public Const TOKEN_CREATE_URL As String = CYBS_BASE_URL + "/token/create"
+        'Public Const TOKEN_UPDATE_URL As String = CYBS_BASE_URL + "/token/update"
+
+    End Class
+
+End Namespace
 ```
 
 ## Web/Mobile
