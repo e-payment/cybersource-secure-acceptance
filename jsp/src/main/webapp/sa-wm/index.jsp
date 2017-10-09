@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>Secure Acceptance</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="image/x-icon" href="../favicon.png" rel="shortcut icon">
     <link rel="stylesheet" type="text/css" href="../css/payment.css"/>
 </head>
 <body>
