@@ -36,7 +36,7 @@ responsePage = responsePage.replaceAll("payment_token.jsp", "response.jsp");
 
     <input type="hidden" name="signed_field_names" value="profile_id,access_key,transaction_uuid,signed_field_names,unsigned_field_names,signed_date_time,locale,payment_method,transaction_type,payment_token,reference_number,auth_trans_ref_no,amount,currency,override_custom_receipt_page">
     
-    <input type="hidden" name="unsigned_field_names" value="bill_to_forename,bill_to_surname,device_fingerprint_id,customer_ip_address,line_item_count,item_0_code,item_0_sku,item_0_name,item_0_quantity,item_0_unit_price,item_1_code,item_1_sku,item_1_name,item_1_quantity,item_1_unit_price,merchant_defined_data1,merchant_defined_data2,merchant_defined_data3,merchant_defined_data4">
+    <input type="hidden" name="unsigned_field_names" value="device_fingerprint_id,customer_ip_address,line_item_count,item_0_code,item_0_sku,item_0_name,item_0_quantity,item_0_unit_price,item_1_code,item_1_sku,item_1_name,item_1_quantity,item_1_unit_price,merchant_defined_data1,merchant_defined_data2,merchant_defined_data3,merchant_defined_data4">
     
     <div id="paymentDetailsSection" class="section">
     <fieldset>
@@ -57,14 +57,6 @@ responsePage = responsePage.replaceAll("payment_token.jsp", "response.jsp");
             <span>locale:</span>                      <input type="text" name="locale"> (en-us, th-th, ja-jp)
 
         </div>
-    </fieldset>
-    <p>
-    <fieldset>
-        <legend>Unsigned Data Fields</legend>
-        The name of each unsigned field should be included in the unsigned_field_names.
-            <h3>Billing Information</h3>
-            <span>bill_to_forename:</span>            <input type="text" name="bill_to_forename" readonly><br/>
-            <span>bill_to_surname:</span>             <input type="text" name="bill_to_surname" readonly><br/>       
     </fieldset>
     </div>
 

@@ -2,6 +2,16 @@
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.*" %>
 <%@ include file="config.jsp" %>
+<%!
+
+    private String getUTCDateTime() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", new Locale("en", "EN"));
+        sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
+
+        return sdf.format(new Date());
+    }
+
+%>
 <%
 
 String responsePage = request.getRequestURL().toString();
@@ -120,12 +130,3 @@ responsePage = responsePage.replaceAll("payment_form.jsp", "response.jsp");
 
 </body>
 </html>
-
-<%!
-    private String getUTCDateTime() {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", new Locale("en", "EN"));
-        sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
-
-        return sdf.format(new Date());
-    }
-%>

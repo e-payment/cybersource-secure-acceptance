@@ -36,13 +36,13 @@ private static final String TOKEN_UPDATE_URL = CYBS_BASE_URL + "/token/update";
 ## Run
 
 ```term
-mvn clean jetty:run
+./mvnw clean jetty:run
 ```
 
 ## Package
 
 ```term
-mvn clean package
+./mvnw clean package
 java -jar target/dependency/jetty-runner.jar target/*.war --path /
 ```
 

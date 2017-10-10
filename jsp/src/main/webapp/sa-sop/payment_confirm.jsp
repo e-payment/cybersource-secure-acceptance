@@ -58,8 +58,8 @@ if ("create_payment_token".equals(request.getParameter("transaction_type"))) {
     </fieldset>
 </div>
 
-    <% if (! "".equals(request.getParameter("payment_token"))) { %>
-
+    <% if (request.getParameter("payment_token") == null) { %>
+    
     <p>
     <fieldset>
         <legend>Card Information</legend>  
