@@ -32,3 +32,5 @@ target/
 **/config.*
 **/report/
 **/notify/
+
+code/

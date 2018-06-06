@@ -8,7 +8,7 @@ Partial Class payment_form
 
     Public Function getUTCDateTime() As String
         Dim univDateTime As System.DateTime = DateTime.UtcNow
-        Return univDateTime.ToString("yyyy-MM-dd'T'HH:mm:ss'Z'")
+        Return univDateTime.ToString("yyyy-MM-dd'T'HH:mm:ss'Z'", New System.Globalization.CultureInfo("en-US"))
     End Function
 
 End Class
