@@ -32,7 +32,7 @@ $response_page = $_SERVER['HTTP_REFERER'] . 'response.php';
 
             <span>transaction_type:</span>            <input type="text" name="transaction_type" value="sale"><br/>
             <span>reference_number:</span>            <input type="text" name="reference_number"><br/>
-            <span class="keyitem">payment_token:</span> <input type="text" name="payment_token" value="4895822548306546604104"><br/>
+            <span class="keyitem">payment_token:</span> <input type="text" name="payment_token" value="5282547059466593203529"><br/>
             <span>amount:</span>                      <input type="text" name="amount"><br/>
             <span>currency:</span>                    <input type="text" name="currency"><br/>
             <span>locale:</span>                      <input type="text" name="locale"> (en-us, th-th, ja-jp)

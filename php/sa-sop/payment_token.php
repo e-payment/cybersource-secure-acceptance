@@ -41,7 +41,7 @@ $response_page = $_SERVER['HTTP_REFERER'] . 'response.php';
             <h3>Payment Information</h3>
             <span>payment_method:</span>              <input type="text" name="payment_method"><br/>
             <span>transaction_type:</span>            <input type="text" name="transaction_type" value="sale"><br/>
-            <span class="keyitem">payment_token:</span> <input type="text" name="payment_token" value="5053355694176713403008"><br/>
+            <span class="keyitem">payment_token:</span> <input type="text" name="payment_token" value="5282547059466593203529"><br/>
             <span>reference_number:</span>            <input type="text" name="reference_number"><br/>
             <span><b>auth_trans_ref_no</b>:</span>    <input type="text" name="auth_trans_ref_no"><br/>
             <span>amount:</span>                      <input type="text" name="amount"><br/>
