@@ -3,6 +3,10 @@
 include_once('config.php'); 
 date_default_timezone_set('Asia/Bangkok');
 
+session_start();
+$sess_id  = session_id();
+$df_param = 'org_id=' . DF_ORG_ID . '&amp;session_id=' . MERCHANT_ID . $sess_id;
+
 $response_page = $_SERVER['HTTP_REFERER'] . 'response.php';
 
 ?>
@@ -79,6 +83,7 @@ UTC: <?php echo gmdate('Y-m-d\TH:i:s\Z') ?>
     <input type="hidden" name="override_custom_receipt_page" value="<?php echo $response_page ?>">
 
     <!-- MDD START -->
+    <input type="hidden" name="device_fingerprint_id" value="<?php echo $sess_id ?>" />
     <input type="hidden" name="customer_ip_address" value="<?php echo @$_SERVER['REMOTE_ADDR'] ?>">
 
     <input type="hidden" name="line_item_count" value="2" />
@@ -119,6 +124,12 @@ UTC: <?php echo gmdate('Y-m-d\TH:i:s\Z') ?>
         $("input[name='transaction_type']").val(type);
     }
 </script>
+
+<!-- DF START -->
+device_fingerprint_param: <?php echo $df_param ?>
+<p style="background:url(https://h.online-metrix.net/fp/clear.png?<?php echo $df_param ?>&amp;m=1)"></p>
+<img src="https://h.online-metrix.net/fp/clear.png?<?php echo $df_param ?>&amp;m=2" width="1" height="1" />
+<!-- DF END -->
 
 </body>
 </html>

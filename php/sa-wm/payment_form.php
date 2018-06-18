@@ -2,6 +2,10 @@
 
 include_once('config.php'); 
 
+session_start();
+$sess_id  = session_id();
+$df_param = 'org_id=' . DF_ORG_ID . '&amp;session_id=' . MERCHANT_ID . $sess_id;
+
 $response_page = $_SERVER['HTTP_REFERER'] . 'response.php';
 
 ?>
@@ -57,10 +61,13 @@ $response_page = $_SERVER['HTTP_REFERER'] . 'response.php';
         </div>
     </fieldset>
 
+    <!-- START FOR TEST -->
     <input type="hidden" name="override_custom_cancel_page" value="<?php echo $response_page ?>">
     <input type="hidden" name="override_custom_receipt_page" value="<?php echo $response_page ?>">
+    <!-- END FOR TEST -->
 
     <!-- MDD START -->
+    <input type="hidden" name="device_fingerprint_id" value="<?php echo $sess_id ?>" />
     <input type="hidden" name="customer_ip_address" value="<?php echo @$_SERVER['REMOTE_ADDR'] ?>">
 
     <input type="hidden" name="line_item_count" value="2"/>
@@ -102,6 +109,12 @@ $response_page = $_SERVER['HTTP_REFERER'] . 'response.php';
     </script>
 
 </form>
+
+<!-- DF START -->
+device_fingerprint_param: <?php echo $df_param ?>
+<p style="background:url(https://h.online-metrix.net/fp/clear.png?<?php echo $df_param ?>&amp;m=1)"></p>
+<img src="https://h.online-metrix.net/fp/clear.png?<?php echo $df_param ?>&amp;m=2" width="1" height="1" />
+<!-- DF END -->
 
 </body>
 </html>
