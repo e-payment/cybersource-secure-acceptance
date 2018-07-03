@@ -1,10 +1,9 @@
 ﻿Imports Microsoft.VisualBasic
 
-Public Class security
-    Const SECRET_KEY As String = "fc65fa272ce54851bae8433d7016aaace58d636b087043e285cc2120c2095c6c60faa1b0901b47e6bc1bc9ddeffe76b8ddb2ff08ed594fe2b8207758ee1d4a2684a591073545499485b9023a03d4de2b5c661d4de7214a0f862c5e8c785844f927fd3fba0d5c4cbc8895f61656353998aef73b42d15c4ed397d22bf86a64563c"
+Public Class Security
 
     Public Shared Function sign(ByVal paramsArray As Hashtable) As String
-        Return sign(buildDataToSign(paramsArray), SECRET_KEY)
+        Return sign(buildDataToSign(paramsArray), CybsUtil.getConfig("SECRET_KEY"))
     End Function
 
     Private Shared Function sign(ByVal data As String, ByVal secretKey As String) As String
