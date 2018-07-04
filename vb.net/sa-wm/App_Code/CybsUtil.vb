@@ -1,4 +1,4 @@
-﻿Imports Microsoft.VisualBasic
+Imports Microsoft.VisualBasic
 
 Public Class CybsUtil
 
