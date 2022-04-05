@@ -10,11 +10,18 @@
 	private static final String ALGORITHM  = "HmacSHA256";
 
 	private String sign(Map params) throws InvalidKeyException, NoSuchAlgorithmException {
-		return sign(buildDataToSign(params), SECRET_KEY);
+		String p_secret_key = "";
+		if(params.get("secret_key") == null) {
+			p_secret_key = SECRET_KEY;
+		} else {
+			p_secret_key = String.valueOf(params.get("secret_key"));
+		}
+		//System.out.println("p_secret_key: " + p_secret_key);
+		return sign(buildDataToSign(params), p_secret_key);
 	}
 	
 	private String sign(String data, String secretKey) throws InvalidKeyException, NoSuchAlgorithmException {
-
+		System.out.println("anisa/data: " + data);
 		SecretKeySpec secretKeySpec = new SecretKeySpec(secretKey.getBytes(), ALGORITHM);
 		Mac mac = Mac.getInstance(ALGORITHM);
 		mac.init(secretKeySpec);

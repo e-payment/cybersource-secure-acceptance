@@ -23,7 +23,6 @@
 						<li><a href="payment-form.jsp">Payment</a></li>
 						<li><a href="payment-token.jsp">Tokenization</a></li>
 						<li><a href="payment-recurring.jsp">Recurring Billing</a></li>
-						<li><a href="payment-tl-form.jsp">Payment for ThaiLife</a></li>
 						<li>Installment</li>
 					</ul>
 					<h3>Test CyberSource Business Center</h3>

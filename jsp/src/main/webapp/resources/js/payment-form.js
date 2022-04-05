@@ -17,7 +17,6 @@ function addLinkToSetDefaults() {
         $(this).text("");
 
         var setDefaultMethod = "setDefaultsFor" + capitalize($(this).next().attr("id")) + "()";
-
         newlink = $(document.createElement("a"));
         newlink.attr({
             id:'link-' + i, name:'link' + i, href:'#'
@@ -33,7 +32,7 @@ function addLinkToSetDefaults() {
 
     newbutton = $(document.createElement("input"));
     newbutton.attr({
-        type:'button', id:'btn_defaultAll', value:'Default All', onClick:'setDefaultsForAll()'
+        type:'button', id:'btn_defaultAll', class:'btn btn-secondary', value:'Default All', onClick:'setDefaultsForAll()'
     });
 
     newbutton.bind('click', function() {
@@ -54,10 +53,10 @@ function setDefaultsForPaymentDetailsSection() {
     //$("input[name='transaction_type']").val("sale");
     $("input[name='reference_number']").val(merchant_ref_no);
     $("input[name='auth_trans_ref_no']").val(merchant_ref_no);
-    $("input[name='recurring_amount']").val("1572.00");
-    $("input[name='amount']").val("1572.00");
+    $("input[name='recurring_amount']").val("1.00");
+    $("input[name='amount']").val("1.00");
     $("input[name='currency']").val("THB");
-    $("input[name='locale']").val("en-us");
+    $("input[name='locale']").val("th-th"); // en-us
     $("input[name='bill_to_forename']").val("Krungsri");
     $("input[name='bill_to_surname']").val("Simple");
     $("input[name='bill_to_email']").val("customer@mail.com");
@@ -76,4 +75,12 @@ function setDefaultsForUnsignedDetailsSection(){
     $("input[name='card_expiry_date']").val("02-2022");
     $("input[name='card_cvn']").val("111");
 }
+
+
+
+
+
+
+
+
 
